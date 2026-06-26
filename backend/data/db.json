@@ -98,7 +98,7 @@
       "id": 8,
       "user_id": 4,
       "title": "helo",
-      "status": "todo",
+      "status": "in_progress",
       "priority": "Medium",
       "assignee": "No one",
       "due_date": null,
@@ -173,6 +173,26 @@
       "assignee": "No one",
       "due_date": null,
       "created_at": "2026-06-25T20:07:41.490Z"
+    },
+    {
+      "id": 16,
+      "user_id": 4,
+      "title": "presentaion",
+      "status": "done",
+      "priority": "Medium",
+      "assignee": "No one",
+      "due_date": null,
+      "created_at": "2026-06-25T21:48:34.246Z"
+    },
+    {
+      "id": 17,
+      "user_id": 4,
+      "title": "codearena",
+      "status": "todo",
+      "priority": "High",
+      "assignee": "Adam",
+      "due_date": "2026-07-10",
+      "created_at": "2026-06-25T21:49:03.147Z"
     }
   ],
   "activity_log": [
@@ -283,11 +303,41 @@
       "user_id": 4,
       "action": "Moved task \"helo\" to To Do",
       "created_at": "2026-06-25T20:10:57.023Z"
+    },
+    {
+      "id": 19,
+      "user_id": 4,
+      "action": "Created task \"presentaion\"",
+      "created_at": "2026-06-25T21:48:34.252Z"
+    },
+    {
+      "id": 20,
+      "user_id": 4,
+      "action": "Created task \"codearena\"",
+      "created_at": "2026-06-25T21:49:03.151Z"
+    },
+    {
+      "id": 21,
+      "user_id": 4,
+      "action": "Updated task \"codearena\"",
+      "created_at": "2026-06-25T21:49:12.718Z"
+    },
+    {
+      "id": 22,
+      "user_id": 4,
+      "action": "Started task \"helo\"",
+      "created_at": "2026-06-25T22:12:48.569Z"
+    },
+    {
+      "id": 23,
+      "user_id": 4,
+      "action": "Completed task \"presentaion\"",
+      "created_at": "2026-06-25T22:12:51.157Z"
     }
   ],
   "_nextId": {
     "users": 5,
-    "tasks": 16,
-    "activity_log": 19
+    "tasks": 18,
+    "activity_log": 24
   }
 }
