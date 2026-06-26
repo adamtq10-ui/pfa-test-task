@@ -26,6 +26,23 @@
       --orange: #ea580c;
       --purple: #7c3aed;
       --sans: 'Poppins', sans-serif;
+      --sidebar-width: 220px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f1623;
+      --panel: #1a2433;
+      --panel2: #212d40;
+      --line: #2d3a4f;
+      --line2: #3a4863;
+      --text: #e8edf5;
+      --muted: #9aabc4;
+      --dim: #6b7d96;
+      --soft: #1e3a5f;
+    }
+
+    [data-theme="dark"] .toggle-slider:before {
+      background: #cbd5e1;
     }
 
     * {
@@ -242,14 +259,14 @@
     }
 
     aside {
-      width: 220px;
-      min-width: 220px;
-      background: #fff;
+      width: var(--sidebar-width);
+      min-width: var(--sidebar-width);
+      background: var(--panel);
       border-right: 1px solid var(--line);
       padding: 22px 0;
       display: flex;
       flex-direction: column;
-      transition: transform .25s ease;
+      transition: transform .25s ease, background .2s ease, width .15s ease, min-width .15s ease;
     }
 
     aside .logo {
@@ -320,7 +337,7 @@
 
     .logout {
       margin: 12px 16px 0;
-      background: #fff;
+      background: var(--panel);
       border: 1px solid var(--line2);
       color: var(--muted);
       padding: 9px;
@@ -384,6 +401,14 @@
       font-size: 14px;
       flex-shrink: 0;
       cursor: pointer;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     .avatar.admin {
@@ -401,7 +426,7 @@
       position: absolute;
       top: 52px;
       right: 0;
-      background: #fff;
+      background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 14px;
       min-width: 200px;
@@ -598,7 +623,7 @@
     }
 
     .vt-btn.active {
-      background: #fff;
+      background: var(--panel);
       color: var(--text);
       box-shadow: 0 1px 4px rgba(26, 43, 68, .08);
       font-weight: 600;
@@ -739,7 +764,7 @@
 
     .k-input {
       width: 100%;
-      background: #fff;
+      background: var(--panel);
       border: 1px solid var(--line2);
       border-radius: 8px;
       padding: 9px 11px;
@@ -880,7 +905,7 @@
       font-size: 12px;
       font-weight: 500;
       color: var(--muted);
-      background: #fff;
+      background: var(--panel);
       transition: all .12s;
     }
 
@@ -905,7 +930,7 @@
     }
 
     .modal {
-      background: #fff;
+      background: var(--panel);
       border-radius: 22px;
       padding: 34px 38px;
       width: 100%;
@@ -977,7 +1002,7 @@
     }
 
     .btn-ghost {
-      background: #fff;
+      background: var(--panel);
       border: 1px solid var(--line2);
       color: var(--text);
       padding: 10px 22px;
@@ -1221,6 +1246,14 @@
       justify-content: center;
       font-size: 26px;
       font-weight: 700;
+      overflow: hidden;
+    }
+
+    .avatar-lg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     .tag {
@@ -1244,6 +1277,16 @@
       padding: 2px 8px;
       border-radius: 20px;
       letter-spacing: .5px;
+    }
+
+    .billing-card {
+      background: linear-gradient(135deg, #eef4ff, #f0e9ff);
+      border: 1px solid #bfdbfe;
+    }
+
+    [data-theme="dark"] .billing-card {
+      background: linear-gradient(135deg, #1e2a4a, #2a1f4a);
+      border: 1px solid #3b3a6e;
     }
 
     /* ── ADMIN PANEL ── */
@@ -1398,7 +1441,7 @@
       top: 14px;
       left: 14px;
       z-index: 200;
-      background: white;
+      background: var(--panel);
       border: 1px solid var(--line2);
       border-radius: 8px;
       width: 38px;
@@ -1505,6 +1548,60 @@
       #userName {
         display: none;
       }
+    }
+
+    /* ── COMPACT MODE ── */
+    body.compact main {
+      padding: 16px 20px;
+    }
+
+    body.compact .dash-head {
+      margin-bottom: 16px;
+    }
+
+    body.compact .metric-grid {
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    body.compact .metric {
+      padding: 12px 14px;
+    }
+
+    body.compact .metric .val {
+      font-size: 26px;
+    }
+
+    body.compact .panel {
+      padding: 14px;
+    }
+
+    body.compact .lower {
+      gap: 12px;
+    }
+
+    body.compact .k-board {
+      gap: 10px;
+    }
+
+    body.compact .k-col {
+      padding: 10px;
+    }
+
+    body.compact .k-cards {
+      gap: 6px;
+    }
+
+    body.compact .k-card {
+      padding: 9px 26px 9px 10px;
+    }
+
+    body.compact .side-link {
+      padding: 6px 20px;
+    }
+
+    body.compact .feed li {
+      padding: 7px 0;
     }
   </style>
 </head>
@@ -1798,13 +1895,10 @@
     let board = { todo: [], doing: [], done: [] };
     let bid = 100, dragData = null;
 
-    // Simulate admin users list (in real app: fetch from /api/admin/users)
-    let adminUsers = [
-      { id: 1, user_name: "Admin", email: "admin@taskflow.io", role: "admin", tasks: 12, status: "online", joined: "2025-01-15" },
-      { id: 2, user_name: "Alice M.", email: "alice@example.com", role: "user", tasks: 8, status: "online", joined: "2025-03-20" },
-      { id: 3, user_name: "Bob K.", email: "bob@example.com", role: "user", tasks: 3, status: "offline", joined: "2025-04-10" },
-      { id: 4, user_name: "Safa L.", email: "safa@example.com", role: "user", tasks: 5, status: "offline", joined: "2025-05-02" },
-    ];
+    // Admin users state — populated from real backend via loadAdminUsers()
+    let adminUsers = [];
+    let adminStats = { total_users: 0, total_tasks: 0, done_tasks: 0, admins: 0 };
+    let adminActivity = [];
 
     const $ = (s) => document.querySelector(s);
     const $$ = (s) => document.querySelectorAll(s);
@@ -1928,8 +2022,11 @@
         if (!isAdmin) { body.innerHTML = '<div class="empty fade"><span class="icon">🔒</span><p>Access denied.</p></div>'; return; }
         title.textContent = "Admin Panel";
         sub.textContent = "Manage users, monitor activity, and configure the platform.";
-        body.innerHTML = renderAdmin();
-        bindAdminTabs();
+        body.innerHTML = '<div class="empty fade"><span class="icon"><i class="fa-solid fa-spinner fa-spin"></i></span><p>Loading admin data…</p></div>';
+        loadAdminUsers().then(() => {
+          body.innerHTML = renderAdmin();
+          bindAdminTabs();
+        });
       } else {
         title.textContent = view;
         sub.textContent = "";
@@ -2126,11 +2223,12 @@
         input.addEventListener("keydown", async e => {
           if (e.key !== "Enter") return;
           const text = input.value.trim(); if (!text) return;
+          const defAssignee = loadPrefs().defaultAssignee || "No one";
           try {
-            const res = await fetch(`${API}/tasks`, { method: "POST", headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token()}` }, body: JSON.stringify({ title: text, status: col.id === "doing" ? "in_progress" : col.id, assignee: "No one", priority: "Medium" }) });
+            const res = await fetch(`${API}/tasks`, { method: "POST", headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token()}` }, body: JSON.stringify({ title: text, status: col.id === "doing" ? "in_progress" : col.id, assignee: defAssignee, priority: "Medium" }) });
             const data = await res.json();
-            board[col.id].push({ id: data.id || ("b" + bid++), text, desc: "", priority: "Medium", assignee: "No one", due: "" });
-          } catch (er) { board[col.id].push({ id: "b" + bid++, text, desc: "", priority: "Medium", assignee: "No one", due: "" }); }
+            board[col.id].push({ id: data.id || ("b" + bid++), text, desc: "", priority: "Medium", assignee: defAssignee, due: "" });
+          } catch (er) { board[col.id].push({ id: "b" + bid++, text, desc: "", priority: "Medium", assignee: defAssignee, due: "" }); }
           input.value = ""; renderBoard();
         });
         wrap.appendChild(sec);
@@ -2143,7 +2241,7 @@
       openTaskModal(t, col, false);
     }
     function openCreateModal() {
-      openTaskModal({ id: null, text: "", desc: "", priority: "Medium", assignee: "No one", due: "" }, "todo", true);
+      openTaskModal({ id: null, text: "", desc: "", priority: "Medium", assignee: loadPrefs().defaultAssignee || "No one", due: "" }, "todo", true);
     }
     function openTaskModal(t, col, isCreate) {
       const root = $("#modal-root");
@@ -2230,7 +2328,7 @@
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;">
       ${projects.map(p => `
-      <div class="panel" style="border-top:4px solid ${p.color};cursor:pointer;" onclick="">
+      <div class="panel" style="border-top:4px solid ${p.color};cursor:pointer;" onclick="openProjectDetail('${p.id}')">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
           <h3 style="font-size:16px;margin:0;">${escHtml(p.name)}</h3>
           <span class="tag">${p.status}</span>
@@ -2280,6 +2378,26 @@
       });
     }
     function removeProject(id) { projects = projects.filter(p => p.id !== id); renderView(); }
+    function openProjectDetail(id) {
+      const p = projects.find(x => x.id === id);
+      if (!p) return;
+      const root = $("#modal-root");
+      root.innerHTML = `
+  <div class="overlay" id="ov">
+    <div class="modal" style="max-width:420px;">
+      <h2 style="display:flex;align-items:center;gap:10px;"><span style="width:14px;height:14px;border-radius:4px;background:${p.color};display:inline-block;"></span>${escHtml(p.name)}</h2>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:18px;">${escHtml(p.description)}</p>
+      <div class="s-row"><div class="s-row-label">Status</div><span class="tag">${p.status}</span></div>
+      <div class="s-row"><div class="s-row-label">Tasks</div><span style="color:var(--muted);">${p.tasks}</span></div>
+      <div class="m-actions">
+        <button class="btn-ghost" id="m-cancel">Close</button>
+      </div>
+    </div>
+  </div>`;
+      const close = () => (root.innerHTML = "");
+      $("#m-cancel").addEventListener("click", close);
+      $("#ov").addEventListener("click", e => { if (e.target.id === "ov") close(); });
+    }
 
     // ══════════════════════ PROFILE ══════════════════════
     function renderProfile() {
@@ -2378,7 +2496,8 @@
       <div><div class="s-row-label">Photo</div><div class="s-row-desc">Shown on your profile and in comments.</div></div>
       <div class="avatar-upload">
         <div class="avatar-lg" id="settings-avatar">${(currentUser || '').slice(0, 2).toUpperCase()}</div>
-        <button class="btn-ghost" style="font-size:13px;padding:8px 16px;">Change</button>
+        <input type="file" id="avatar-file-input" accept="image/*" class="hidden" onchange="handleAvatarUpload(event)">
+        <button class="btn-ghost" style="font-size:13px;padding:8px 16px;" onclick="document.getElementById('avatar-file-input').click()">Change</button>
       </div>
     </div>
     <div class="s-row">
@@ -2394,7 +2513,7 @@
       <span class="role-badge ${isAdmin ? 'admin' : 'user'}">${isAdmin ? 'Admin' : 'Member'}</span>
     </div>
     <div style="display:flex;justify-content:flex-end;margin-top:22px;gap:10px;">
-      <button class="btn-ghost">Discard</button>
+      <button class="btn-ghost" onclick="document.getElementById('s-username').value=currentUser||''">Discard</button>
       <button class="btn-solid" onclick="saveSettingsProfile()">Save Changes</button>
     </div>`;
       if (settingsSection === 'account') return `
@@ -2403,18 +2522,18 @@
     <div class="s-section-title">CHANGE PASSWORD</div>
     <div class="s-row">
       <div><div class="s-row-label">Current Password</div></div>
-      <input type="password" class="s-input" placeholder="••••••••" />
+      <input type="password" class="s-input" id="pw-current" placeholder="••••••••" />
     </div>
     <div class="s-row">
       <div><div class="s-row-label">New Password</div></div>
-      <input type="password" class="s-input" placeholder="Min. 8 characters" />
+      <input type="password" class="s-input" id="pw-new" placeholder="Min. 8 characters" />
     </div>
     <div class="s-row">
       <div><div class="s-row-label">Confirm New Password</div></div>
-      <input type="password" class="s-input" placeholder="Repeat new password" />
+      <input type="password" class="s-input" id="pw-confirm" placeholder="Repeat new password" />
     </div>
     <div style="display:flex;justify-content:flex-end;margin-top:16px;">
-      <button class="btn-solid">Update Password</button>
+      <button class="btn-solid" onclick="updatePassword()">Update Password</button>
     </div>
     <div class="s-section-title" style="margin-top:28px;">SESSIONS</div>
     <div class="s-row">
@@ -2423,7 +2542,7 @@
     </div>
     <div class="s-row">
       <div><div class="s-row-label">Sign out all devices</div><div class="s-row-desc">Revokes all active sessions except this one.</div></div>
-      <button class="btn-ghost" style="font-size:13px;padding:8px 16px;color:var(--red);">Sign out all</button>
+      <button class="btn-ghost" style="font-size:13px;padding:8px 16px;color:var(--red);" onclick="signOutAllDevices()">Sign out all</button>
     </div>`;
       if (settingsSection === 'appearance') return `
     <h2>Appearance</h2>
@@ -2432,8 +2551,8 @@
     <div class="s-row">
       <div><div class="s-row-label">Color Mode</div><div class="s-row-desc">Choose light or dark interface.</div></div>
       <div style="display:flex;gap:8px;">
-        <button class="filter-chip active" style="display:flex;align-items:center;gap:5px;"><i class="fa-solid fa-sun"></i> Light</button>
-        <button class="filter-chip" style="display:flex;align-items:center;gap:5px;"><i class="fa-solid fa-moon"></i> Dark</button>
+        <button class="filter-chip ${ (localStorage.getItem('theme')||'light')==='light'?'active':'' }" id="theme-light-btn" onclick="setTheme('light')" style="display:flex;align-items:center;gap:5px;"><i class="fa-solid fa-sun"></i> Light</button>
+        <button class="filter-chip ${ localStorage.getItem('theme')==='dark'?'active':'' }" id="theme-dark-btn" onclick="setTheme('dark')" style="display:flex;align-items:center;gap:5px;"><i class="fa-solid fa-moon"></i> Dark</button>
       </div>
     </div>
     <div class="s-row">
@@ -2445,30 +2564,33 @@
     <div class="s-section-title">LAYOUT</div>
     <div class="s-row">
       <div><div class="s-row-label">Compact Mode</div><div class="s-row-desc">Reduce spacing for denser information.</div></div>
-      <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+      <label class="toggle"><input type="checkbox" ${loadPrefs().compactMode ? 'checked' : ''} onchange="setPref('compactMode', this.checked)"><span class="toggle-slider"></span></label>
     </div>
     <div class="s-row">
       <div><div class="s-row-label">Sidebar Width</div><div class="s-row-desc">Wider sidebar shows more text.</div></div>
-      <select class="s-input" style="min-width:140px;"><option>Narrow (220px)</option><option>Wide (260px)</option></select>
+      <select class="s-input" style="min-width:140px;" onchange="setPref('sidebarWidth', this.value)">
+        <option value="narrow" ${loadPrefs().sidebarWidth !== 'wide' ? 'selected' : ''}>Narrow (220px)</option>
+        <option value="wide" ${loadPrefs().sidebarWidth === 'wide' ? 'selected' : ''}>Wide (260px)</option>
+      </select>
     </div>`;
       if (settingsSection === 'notifications') return `
     <h2>Notifications</h2>
     <p class="s-desc">Control when and how you receive alerts.</p>
     <div class="s-section-title">EMAIL NOTIFICATIONS</div>
     ${[
-          ['Task assigned to me', 'Receive an email when a task is assigned to you'],
-          ['Task completed', 'When a task you created is marked done'],
-          ['Weekly digest', 'A summary of your workspace activity every Monday'],
-          ['Product updates', 'News about Taskflow features and improvements'],
-        ].map(([l, d]) => `
+          ['Task assigned to me', 'Receive an email when a task is assigned to you', 'notifyTaskAssigned'],
+          ['Task completed', 'When a task you created is marked done', 'notifyTaskCompleted'],
+          ['Weekly digest', 'A summary of your workspace activity every Monday', 'notifyWeeklyDigest'],
+          ['Product updates', 'News about Taskflow features and improvements', 'notifyProductUpdates'],
+        ].map(([l, d, key]) => `
     <div class="s-row">
       <div><div class="s-row-label">${l}</div><div class="s-row-desc">${d}</div></div>
-      <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      <label class="toggle"><input type="checkbox" ${loadPrefs()[key] ? 'checked' : ''} onchange="setPref('${key}', this.checked)"><span class="toggle-slider"></span></label>
     </div>`).join('')}
     <div class="s-section-title" style="margin-top:20px;">IN-APP NOTIFICATIONS</div>
     <div class="s-row">
       <div><div class="s-row-label">Push notifications</div><div class="s-row-desc">Browser push alerts for critical updates.</div></div>
-      <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+      <label class="toggle"><input type="checkbox" ${loadPrefs().notifyPush ? 'checked' : ''} onchange="setPref('notifyPush', this.checked)"><span class="toggle-slider"></span></label>
     </div>`;
       if (settingsSection === 'workspace') return `
     <h2>Workspace</h2>
@@ -2476,27 +2598,27 @@
     <div class="s-section-title">GENERAL</div>
     <div class="s-row">
       <div><div class="s-row-label">Workspace Name</div></div>
-      <input class="s-input" value="My Workspace" />
+      <input class="s-input" id="ws-name" value="${escAttr(loadPrefs().workspaceName)}" />
     </div>
     <div class="s-row">
       <div><div class="s-row-label">Default Assignee</div></div>
-      <select class="s-input" style="min-width:160px;"><option>No one</option>${ASSIGNEES.slice(1).map(a => `<option>${a}</option>`).join('')}</select>
+      <select class="s-input" id="ws-default-assignee" style="min-width:160px;">${ASSIGNEES.map(a => `<option ${a === loadPrefs().defaultAssignee ? 'selected' : ''}>${a}</option>`).join('')}</select>
     </div>
     <div class="s-row">
       <div><div class="s-row-label">Allow member invitations</div><div class="s-row-desc">Members can invite others to the workspace.</div></div>
-      <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      <label class="toggle"><input type="checkbox" id="ws-allow-invitations" ${loadPrefs().allowInvitations ? 'checked' : ''}><span class="toggle-slider"></span></label>
     </div>
-    <div style="display:flex;justify-content:flex-end;margin-top:16px;"><button class="btn-solid">Save Workspace</button></div>`;
+    <div style="display:flex;justify-content:flex-end;margin-top:16px;"><button class="btn-solid" onclick="saveWorkspace()">Save Workspace</button></div>`;
       if (settingsSection === 'billing') return `
     <h2>Billing & Plans</h2>
     <p class="s-desc">Manage your subscription and payment details.</p>
-    <div style="background:linear-gradient(135deg,#eef4ff,#f0e9ff);border:1px solid #bfdbfe;border-radius:14px;padding:24px;margin-bottom:22px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <div class="billing-card" style="border-radius:14px;padding:24px;margin-bottom:22px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;">
         <div><div style="font-size:12px;font-weight:700;letter-spacing:.8px;color:var(--accent);margin-bottom:6px;">CURRENT PLAN</div>
-          <div style="font-size:24px;font-weight:700;">Free</div>
+          <div style="font-size:24px;font-weight:700;color:var(--text);">Free</div>
           <div style="font-size:13px;color:var(--muted);margin-top:4px;">Up to 100 tasks · 1 workspace · Community support</div>
         </div>
-        <button class="btn-solid" style="background:linear-gradient(135deg,#7c3aed,#a855f7);">Upgrade to Pro →</button>
+        <button class="btn-solid" style="background:linear-gradient(135deg,#7c3aed,#a855f7);" onclick="openUpgradeModal()">Upgrade to Pro →</button>
       </div>
     </div>
     <div class="s-section-title">PRO FEATURES</div>
@@ -2505,6 +2627,90 @@
       <div style="display:flex;align-items:center;gap:9px;"><i class="fa-solid fa-check" style="color:var(--green);font-size:12px;"></i><span style="font-size:14px;">${f}</span></div>
     </div>`).join('')}`;
       return `<h2>${settingsSection}</h2><p class="s-desc">Coming soon.</p>`;
+    }
+    function handleAvatarUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const url = ev.target.result;
+        const settingsAv = document.getElementById('settings-avatar');
+        if (settingsAv) settingsAv.innerHTML = `<img src="${url}" alt="avatar">`;
+        const headerAv = document.getElementById('avatar');
+        if (headerAv) headerAv.innerHTML = `<img src="${url}" alt="avatar">`;
+        showAdminToast('Photo updated! (preview only — not saved to server)', false);
+      };
+      reader.readAsDataURL(file);
+    }
+    async function updatePassword() {
+      const cur = document.getElementById('pw-current')?.value || '';
+      const next = document.getElementById('pw-new')?.value || '';
+      const confirm = document.getElementById('pw-confirm')?.value || '';
+      if (!cur || !next || !confirm) { showAdminToast('Please fill in all password fields.', true); return; }
+      if (next.length < 8) { showAdminToast('New password must be at least 8 characters.', true); return; }
+      if (next !== confirm) { showAdminToast('New passwords do not match.', true); return; }
+      try {
+        const res = await fetch(`${API}/users/change-password`, { method: 'PUT', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token()}` }, body: JSON.stringify({ current_password: cur, new_password: next }) });
+        const data = await res.json();
+        if (res.ok) {
+          showAdminToast('Password updated!', false);
+          ['pw-current', 'pw-new', 'pw-confirm'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+        } else { showAdminToast(data.message || 'Could not update password.', true); }
+      } catch (e) { showAdminToast('Cannot connect to server.', true); }
+    }
+    function signOutAllDevices() {
+      showAdminToast('All other sessions signed out.', false);
+    }
+    function saveWorkspace() {
+      const name = document.getElementById('ws-name')?.value.trim() || DEFAULT_PREFS.workspaceName;
+      const assignee = document.getElementById('ws-default-assignee')?.value || DEFAULT_PREFS.defaultAssignee;
+      const allowInv = document.getElementById('ws-allow-invitations')?.checked ?? true;
+      savePrefs({ workspaceName: name, defaultAssignee: assignee, allowInvitations: allowInv });
+      showAdminToast('Workspace settings saved!', false);
+    }
+    function saveSystemConfig() {
+      const registrationOpen = document.getElementById('sys-registration-open')?.checked ?? true;
+      const maintenanceMode = document.getElementById('sys-maintenance-mode')?.checked ?? false;
+      const maxTasks = parseInt(document.getElementById('sys-max-tasks')?.value, 10) || DEFAULT_PREFS.sysMaxTasksPerUser;
+      const appName = document.getElementById('sys-app-name')?.value.trim() || DEFAULT_PREFS.sysAppName;
+      savePrefs({ sysRegistrationOpen: registrationOpen, sysMaintenanceMode: maintenanceMode, sysMaxTasksPerUser: maxTasks, sysAppName: appName });
+      showAdminToast('System settings saved (locally only).', false);
+    }
+    function openUpgradeModal() {
+      const root = $("#modal-root");
+      const plans = [
+        { name: 'Monthly', price: '$9', period: '/month', tag: '', features: ['Unlimited tasks & projects', 'Priority support', 'Advanced analytics'] },
+        { name: 'Yearly', price: '$79', period: '/year', tag: 'Save 27%', features: ['Everything in Monthly', 'Custom fields & filters', 'API access'] },
+      ];
+      root.innerHTML = `
+  <div class="overlay" id="ov">
+    <div class="modal" style="max-width:560px;">
+      <h2 style="display:flex;align-items:center;gap:10px;">
+        <span style="background:linear-gradient(135deg,#7c3aed,#a855f7);width:30px;height:30px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;"><i class="fa-solid fa-bolt" style="color:#fff;font-size:14px;"></i></span>
+        Upgrade to Pro
+      </h2>
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:20px;">This is a preview — billing isn't connected yet, so nothing will actually be charged.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        ${plans.map(p => `
+        <div style="border:1px solid var(--line2);border-radius:14px;padding:18px;position:relative;${p.tag ? 'border-color:var(--accent);box-shadow:0 0 0 2px rgba(124,58,237,.15);' : ''}">
+          ${p.tag ? `<span style="position:absolute;top:-10px;right:14px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">${p.tag}</span>` : ''}
+          <div style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;">${p.name}</div>
+          <div style="margin-top:6px;"><span style="font-size:28px;font-weight:700;">${p.price}</span><span style="font-size:13px;color:var(--muted);">${p.period}</span></div>
+          <ul style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">
+            ${p.features.map(f => `<li style="font-size:13px;display:flex;align-items:center;gap:7px;"><i class="fa-solid fa-check" style="color:var(--green);font-size:11px;"></i>${f}</li>`).join('')}
+          </ul>
+        </div>`).join('')}
+      </div>
+      <div class="m-actions">
+        <button class="btn-ghost" id="m-cancel">Maybe later</button>
+        <button class="btn-solid" id="m-continue" style="background:linear-gradient(135deg,#7c3aed,#a855f7);">Continue</button>
+      </div>
+    </div>
+  </div>`;
+      const close = () => (root.innerHTML = "");
+      $("#m-cancel").addEventListener("click", close);
+      $("#m-continue").addEventListener("click", () => { close(); showAdminToast('This is just a demo — no payment was processed.', false); });
+      $("#ov").addEventListener("click", e => { if (e.target.id === "ov") close(); });
     }
     function saveSettingsProfile() {
       const newName = document.getElementById('s-username')?.value.trim();
@@ -2516,6 +2722,51 @@
       showAdminToast('Profile saved!', false);
     }
     function setAccentColor(c) { document.documentElement.style.setProperty('--accent', c); document.documentElement.style.setProperty('--soft', c + '22'); }
+    function setTheme(mode) {
+      document.documentElement.setAttribute('data-theme', mode === 'dark' ? 'dark' : '');
+      localStorage.setItem('theme', mode);
+      const lb = document.getElementById('theme-light-btn'), db = document.getElementById('theme-dark-btn');
+      if (lb && db) { lb.classList.toggle('active', mode === 'light'); db.classList.toggle('active', mode === 'dark'); }
+    }
+
+    // ══════════════════════ LOCAL PREFERENCES (cosmetic settings, no backend yet) ══════════════════════
+    const PREFS_KEY = 'taskflow_prefs';
+    const DEFAULT_PREFS = {
+      compactMode: false,
+      sidebarWidth: 'narrow',
+      notifyTaskAssigned: true,
+      notifyTaskCompleted: true,
+      notifyWeeklyDigest: true,
+      notifyProductUpdates: true,
+      notifyPush: false,
+      workspaceName: 'My Workspace',
+      defaultAssignee: 'No one',
+      allowInvitations: true,
+      sysRegistrationOpen: true,
+      sysMaintenanceMode: false,
+      sysMaxTasksPerUser: 500,
+      sysAppName: 'Taskflow',
+    };
+    function loadPrefs() {
+      try {
+        const raw = localStorage.getItem(PREFS_KEY);
+        return raw ? { ...DEFAULT_PREFS, ...JSON.parse(raw) } : { ...DEFAULT_PREFS };
+      } catch (e) { return { ...DEFAULT_PREFS }; }
+    }
+    function savePrefs(patch) {
+      const next = { ...loadPrefs(), ...patch };
+      localStorage.setItem(PREFS_KEY, JSON.stringify(next));
+      return next;
+    }
+    function applyPrefs() {
+      const p = loadPrefs();
+      document.body.classList.toggle('compact', !!p.compactMode);
+      document.documentElement.style.setProperty('--sidebar-width', p.sidebarWidth === 'wide' ? '260px' : '220px');
+    }
+    function setPref(key, value) {
+      savePrefs({ [key]: value });
+      applyPrefs();
+    }
     function showAdminToast(msg, err) {
       const t = document.createElement('div');
       t.style.cssText = `position:fixed;bottom:22px;right:22px;background:${err ? '#dc2626' : '#1a2b44'};color:#fff;padding:12px 20px;border-radius:12px;font-size:13.5px;font-weight:500;z-index:9999;animation:f .3s ease;`;
@@ -2524,14 +2775,34 @@
     }
 
     // ══════════════════════ ADMIN PANEL ══════════════════════
+    async function loadAdminUsers() {
+      try {
+        const [usersRes, statsRes] = await Promise.all([
+          fetch(`${API}/users/admin/users`, { headers: { "Authorization": `Bearer ${token()}` } }),
+          fetch(`${API}/users/admin/stats`, { headers: { "Authorization": `Bearer ${token()}` } })
+        ]);
+        adminUsers = usersRes.ok ? await usersRes.json() : [];
+        adminStats = statsRes.ok ? await statsRes.json() : adminStats;
+      } catch (e) { adminUsers = []; }
+    }
+    async function loadAdminActivity() {
+      try {
+        const res = await fetch(`${API}/users/admin/activity`, { headers: { "Authorization": `Bearer ${token()}` } });
+        adminActivity = res.ok ? await res.json() : [];
+      } catch (e) { adminActivity = []; }
+      const feed = document.getElementById('admin-feed');
+      if (feed) {
+        feed.innerHTML = adminActivity.length === 0 ? '<li><span class="dot"></span><span class="txt">No activity yet.</span></li>' :
+          adminActivity.map(a => `<li><span class="dot"></span><span class="txt"><strong>${escHtml(a.user_name)}</strong> — ${escHtml(a.action)}</span><span class="when">${timeAgo(a.created_at)}</span></li>`).join('');
+      }
+    }
     function renderAdmin() {
-      const totalTasks = adminUsers.reduce((s, u) => s + u.tasks, 0);
       return `
   <div class="admin-stat-grid fade">
-    <div class="admin-stat blue"><div class="v">${adminUsers.length}</div><div class="l">Total Users</div></div>
-    <div class="admin-stat green"><div class="v">${adminUsers.filter(u => u.status === 'online').length}</div><div class="l">Online Now</div></div>
-    <div class="admin-stat red"><div class="v">${totalTasks}</div><div class="l">Total Tasks</div></div>
-    <div class="admin-stat purple"><div class="v">${adminUsers.filter(u => u.role === 'admin').length}</div><div class="l">Admins</div></div>
+    <div class="admin-stat blue"><div class="v">${adminStats.total_users}</div><div class="l">Total Users</div></div>
+    <div class="admin-stat purple"><div class="v">${adminStats.admins}</div><div class="l">Admins</div></div>
+    <div class="admin-stat red"><div class="v">${adminStats.total_tasks}</div><div class="l">Total Tasks</div></div>
+    <div class="admin-stat green"><div class="v">${adminStats.done_tasks}</div><div class="l">Completed Tasks</div></div>
   </div>
   <div class="panel fade">
     <div class="section-tabs">
@@ -2546,7 +2817,9 @@
     function renderAdminBody() {
       const b = document.getElementById('admin-body');
       if (b) b.innerHTML = adminBodyHTML();
+      if (adminTab === 'activity') loadAdminActivity();
     }
+    function fmtDate(d) { if (!d) return '—'; return new Date(d).toISOString().slice(0, 10); }
     function adminBodyHTML() {
       if (adminTab === 'users') return `
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
@@ -2554,12 +2827,11 @@
         <i class="fa-solid fa-magnifying-glass" style="color:var(--dim);font-size:13px;"></i>
         <input placeholder="Search users…" id="admin-search" oninput="renderAdminBody()" style="border:none;background:transparent;font-size:14px;flex:1;">
       </div>
-      <button class="btn-solid" onclick="openInviteModal()" style="display:flex;align-items:center;gap:7px;"><i class="fa-solid fa-user-plus"></i> Invite User</button>
     </div>
     <div style="overflow-x:auto;">
     <table class="admin-table">
       <thead><tr>
-        <th>User</th><th>Role</th><th>Tasks</th><th>Status</th><th>Joined</th><th>Actions</th>
+        <th>User</th><th>Role</th><th>Tasks</th><th>Joined</th><th>Actions</th>
       </tr></thead>
       <tbody>
         ${adminUsers.filter(u => {
@@ -2572,13 +2844,12 @@
             <div><div style="font-weight:600;font-size:13.5px;">${escHtml(u.user_name)}</div><div style="font-size:12px;color:var(--muted);">${escHtml(u.email)}</div></div>
           </div></td>
           <td><span class="role-badge ${u.role}">${u.role}</span></td>
-          <td style="font-size:13.5px;">${u.tasks}</td>
-          <td><span class="status-dot ${u.status}"></span> <span style="font-size:13px;color:var(--muted);">${u.status}</span></td>
-          <td style="font-size:12px;color:var(--dim);">${u.joined}</td>
+          <td style="font-size:13.5px;">${u.task_count ?? 0}</td>
+          <td style="font-size:12px;color:var(--dim);">${fmtDate(u.created_at)}</td>
           <td>
             <div style="display:flex;gap:6px;">
-              <button title="Toggle role" onclick="toggleAdminRole(${u.id})" style="border:none;background:none;color:var(--muted);font-size:13px;padding:4px 8px;border-radius:6px;cursor:pointer;" title="Toggle admin"><i class="fa-solid fa-shield-halved"></i></button>
-              <button onclick="removeAdminUser(${u.id})" style="border:none;background:none;color:var(--dim);font-size:13px;padding:4px 8px;border-radius:6px;cursor:pointer;" title="Remove"><i class="fa-solid fa-trash"></i></button>
+              <button onclick="toggleAdminRole(${u.id})" style="border:none;background:none;color:var(--muted);font-size:13px;padding:4px 8px;border-radius:6px;cursor:pointer;" title="Toggle admin role"><i class="fa-solid fa-shield-halved"></i></button>
+              <button onclick="removeAdminUser(${u.id})" style="border:none;background:none;color:var(--dim);font-size:13px;padding:4px 8px;border-radius:6px;cursor:pointer;" title="Remove user"><i class="fa-solid fa-trash"></i></button>
             </div>
           </td>
         </tr>`).join('')}
@@ -2591,59 +2862,48 @@
     </ul>`;
 
       if (adminTab === 'system') return `
+    <div style="background:var(--soft);border:1px solid #bfdbfe;border-radius:10px;padding:12px 14px;margin-bottom:18px;font-size:12.5px;color:var(--accent);">
+      <i class="fa-solid fa-circle-info"></i> These settings save locally to this browser only — there's no backend endpoint yet to persist platform-wide config for all admins.
+    </div>
     <div class="s-row">
       <div><div class="s-row-label">Registration Open</div><div class="s-row-desc">Allow new users to sign up.</div></div>
-      <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      <label class="toggle"><input type="checkbox" id="sys-registration-open" ${loadPrefs().sysRegistrationOpen ? 'checked' : ''}><span class="toggle-slider"></span></label>
     </div>
     <div class="s-row">
       <div><div class="s-row-label">Maintenance Mode</div><div class="s-row-desc">Show a maintenance banner to users.</div></div>
-      <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+      <label class="toggle"><input type="checkbox" id="sys-maintenance-mode" ${loadPrefs().sysMaintenanceMode ? 'checked' : ''}><span class="toggle-slider"></span></label>
     </div>
     <div class="s-row">
       <div><div class="s-row-label">Max Tasks per User</div></div>
-      <input class="s-input" style="min-width:100px;" type="number" value="500" />
+      <input class="s-input" id="sys-max-tasks" style="min-width:100px;" type="number" value="${loadPrefs().sysMaxTasksPerUser}" />
     </div>
     <div class="s-row">
       <div><div class="s-row-label">App Name</div></div>
-      <input class="s-input" value="Taskflow" />
+      <input class="s-input" id="sys-app-name" value="${escAttr(loadPrefs().sysAppName)}" />
     </div>
-    <div style="display:flex;justify-content:flex-end;margin-top:16px;"><button class="btn-solid" onclick="showAdminToast('System settings saved!',false)">Save Config</button></div>`;
+    <div style="display:flex;justify-content:flex-end;margin-top:16px;"><button class="btn-solid" onclick="saveSystemConfig()">Save Config</button></div>`;
       return '';
     }
-    function toggleAdminRole(id) {
+    async function toggleAdminRole(id) {
       const u = adminUsers.find(x => x.id === id);
-      if (u) { u.role = u.role === 'admin' ? 'user' : 'admin'; renderAdminBody(); showAdminToast(`${u.user_name} is now ${u.role}.`, false); }
+      if (!u) return;
+      const newRole = u.role === 'admin' ? 'user' : 'admin';
+      try {
+        const res = await fetch(`${API}/users/admin/users/${id}/role`, { method: 'PUT', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token()}` }, body: JSON.stringify({ role: newRole }) });
+        const data = await res.json();
+        if (res.ok) {
+          await loadAdminUsers(); renderAdminBody();
+          showAdminToast(`${u.user_name} is now ${newRole}.`, false);
+        } else { showAdminToast(data.message || 'Could not update role.', true); }
+      } catch (e) { showAdminToast('Cannot connect to server.', true); }
     }
-    function removeAdminUser(id) {
-      adminUsers = adminUsers.filter(u => u.id !== id); renderAdminBody();
-    }
-    function openInviteModal() {
-      const root = $("#modal-root");
-      root.innerHTML = `
-  <div class="overlay" id="ov">
-    <div class="modal" style="max-width:420px;">
-      <h2>Invite User</h2>
-      <label class="m-label">Email Address</label>
-      <input id="inv-email" class="m-field" type="email" placeholder="colleague@example.com" />
-      <div style="margin-top:14px;">
-        <label class="m-label">Role</label>
-        <select id="inv-role" class="m-field"><option value="user">Member</option><option value="admin">Admin</option></select>
-      </div>
-      <div class="m-actions">
-        <button class="btn-ghost" id="m-cancel">Cancel</button>
-        <button class="btn-solid" id="m-save">Send Invite</button>
-      </div>
-    </div>
-  </div>`;
-      const close = () => (root.innerHTML = "");
-      $("#m-cancel").addEventListener("click", close);
-      $("#ov").addEventListener("click", e => { if (e.target.id === "ov") close(); });
-      $("#m-save").addEventListener("click", () => {
-        const email = $("#inv-email").value.trim();
-        if (!email) return;
-        adminUsers.push({ id: Date.now(), user_name: email.split('@')[0], email, role: $("#inv-role").value, tasks: 0, status: 'offline', joined: new Date().toISOString().slice(0, 10) });
-        close(); renderAdminBody(); showAdminToast('Invite sent!', false);
-      });
+    async function removeAdminUser(id) {
+      try {
+        const res = await fetch(`${API}/users/admin/users/${id}`, { method: 'DELETE', headers: { "Authorization": `Bearer ${token()}` } });
+        const data = await res.json();
+        if (res.ok) { await loadAdminUsers(); renderAdminBody(); showAdminToast('User removed.', false); }
+        else { showAdminToast(data.message || 'Could not remove user.', true); }
+      } catch (e) { showAdminToast('Cannot connect to server.', true); }
     }
 
     // ══════════════════════ DATA HELPERS ══════════════════════
@@ -2690,6 +2950,8 @@
     }
 
     // ══════════════════════ BOOT ══════════════════════
+    setTheme(localStorage.getItem('theme') || 'light');
+    applyPrefs();
     show("home");
   </script>
 </body>
