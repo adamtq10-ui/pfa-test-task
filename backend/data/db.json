@@ -39,6 +39,13 @@
       "password": "$2a$10$3ek8xVJoze0m7dUEqx957uPCGTykcPYhvtI7rXeDw/0Iuert6ZjUK",
       "role": "user",
       "created_at": "2026-06-26T01:35:58.408Z"
+    },
+    {
+      "user_name": "hafssa",
+      "email": "assakagou@gmail.com",
+      "password": "$2a$10$AWORb6bwk1GQi4gNM2VVA.yGfUD8v9fjnyay.kg5pC8wsqGNCuU6a",
+      "role": "user",
+      "created_at": "2026-06-26T15:58:58.159Z"
     }
   ],
   "tasks": [
@@ -201,6 +208,14 @@
       "assignee": "Adam",
       "due_date": "2026-07-10",
       "created_at": "2026-06-25T21:49:03.147Z"
+    },
+    {
+      "title": "html",
+      "status": "todo",
+      "priority": "Medium",
+      "assignee": "No one",
+      "due_date": null,
+      "created_at": "2026-06-26T20:42:50.644Z"
     }
   ],
   "activity_log": [
@@ -341,17 +356,25 @@
       "user_id": 4,
       "action": "Completed task \"presentaion\"",
       "created_at": "2026-06-25T22:12:51.157Z"
+    },
+    {
+      "action": "Created task \"html\"",
+      "created_at": "2026-06-26T20:42:50.649Z"
+    },
+    {
+      "id": null,
+      "action": "Updated task \"html\"",
+      "created_at": "2026-06-26T20:43:13.276Z"
+    },
+    {
+      "id": 1,
+      "action": "Updated task \"fontend\"",
+      "created_at": "2026-06-26T20:44:54.471Z"
     }
   ],
   "_nextId": {
-<<<<<<< HEAD
-    "users": 5,
-    "tasks": 18,
-    "activity_log": 24
-=======
-    "users": 6,
-    "tasks": 16,
-    "activity_log": 19
->>>>>>> 91497de8a459955c165d06a505a8f2b125749894
+    "users": null,
+    "tasks": null,
+    "activity_log": 2
   }
 }
