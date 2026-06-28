@@ -1,7 +1,7 @@
 const express = require("express");
 const router  = express.Router();
 
-const { register, login, getMe, updateProfile, changePassword } = require("../controllers/authController");
+const { register, login, getMe, updateProfile, changePassword, getWorkspaceInfo } = require("../controllers/authController");
 const { requireAdmin, getAllUsers, updateUserRole, deleteUser, getStats, getActivityLog } = require("../controllers/adminController");
 const auth = require("../middleware/authMiddleware");
 
@@ -13,6 +13,7 @@ router.post("/login",    login);
 router.get("/me",              auth, getMe);
 router.put("/profile",         auth, updateProfile);
 router.put("/change-password", auth, changePassword);
+router.get("/workspace",       auth, getWorkspaceInfo);
 
 // Admin
 router.get("/admin/stats",           auth, requireAdmin, getStats);

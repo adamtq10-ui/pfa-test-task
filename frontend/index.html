@@ -109,6 +109,7 @@
       color: var(--accent);
     }
 
+    /* ── BLOB / HOME ── */
     #home {
       position: relative;
       min-height: 100vh;
@@ -205,6 +206,7 @@
       background: var(--accent-dk);
     }
 
+    /* ── AUTH ── */
     #login {
       position: relative;
       min-height: 100vh;
@@ -250,6 +252,7 @@
       box-shadow: 0 20px 50px rgba(26, 43, 68, .08);
     }
 
+    /* ── DASHBOARD SHELL ── */
     #dashboard {
       display: flex;
       min-height: 100vh;
@@ -418,156 +421,7 @@
       color: var(--text);
     }
 
-    /* NOTIFICATION BELL (added) */
-    .notif-wrap {
-      position: relative;
-    }
-
-    .notif-btn {
-      position: relative;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--panel2);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      transition: background .15s, color .15s;
-    }
-
-    .notif-btn:hover {
-      color: var(--accent);
-      background: var(--soft);
-    }
-
-    .theme-toggle-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--panel2);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      transition: background .15s, color .15s;
-    }
-
-    .theme-toggle-btn:hover {
-      color: var(--accent);
-      background: var(--soft);
-    }
-
-    .notif-badge {
-      position: absolute;
-      top: -3px;
-      right: -3px;
-      min-width: 18px;
-      height: 18px;
-      padding: 0 5px;
-      border-radius: 9px;
-      background: var(--red);
-      color: #fff;
-      font-size: 10px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid var(--bg);
-    }
-
-    .notif-panel {
-      position: absolute;
-      top: 52px;
-      right: 0;
-      width: 330px;
-      max-width: 88vw;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      box-shadow: 0 14px 34px rgba(26, 43, 68, .16);
-      z-index: 9999;
-      overflow: hidden;
-    }
-
-    .notif-panel .np-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 13px 16px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .notif-panel .np-head h4 {
-      font-size: 14.5px;
-      font-weight: 700;
-    }
-
-    .notif-panel .np-head button {
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .notif-list {
-      list-style: none;
-      max-height: 360px;
-      overflow-y: auto;
-    }
-
-    .notif-list li {
-      display: flex;
-      gap: 11px;
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .notif-list li:last-child {
-      border-bottom: none;
-    }
-
-    .notif-list li.unread {
-      background: var(--soft);
-    }
-
-    .notif-list .n-ic {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--panel2);
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 13px;
-    }
-
-    .notif-list .n-txt {
-      font-size: 13px;
-      line-height: 1.4;
-      color: var(--text);
-    }
-
-    .notif-list .n-when {
-      font-size: 11px;
-      color: var(--dim);
-      margin-top: 3px;
-    }
-
-    .notif-empty {
-      text-align: center;
-      padding: 40px 16px;
-      color: var(--dim);
-      font-size: 13px;
-    }
-
+    /* ── PROFILE DROPDOWN ── */
     .profile-dropdown {
       position: absolute;
       top: 52px;
@@ -627,6 +481,7 @@
       color: var(--red);
     }
 
+    /* ── METRIC CARDS ── */
     .metric-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -665,6 +520,23 @@
       margin-top: 2px;
     }
 
+    .metric .trend {
+      font-size: 11px;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .metric .trend.up {
+      color: var(--green);
+    }
+
+    .metric .trend.dn {
+      color: var(--red);
+    }
+
+    /* ── PANELS ── */
     .panel {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -685,11 +557,13 @@
       gap: 18px;
     }
 
+    /* ── CHART ── */
     .chart-wrap {
       height: 160px;
       position: relative;
     }
 
+    /* ── FEED ── */
     .feed {
       list-style: none;
     }
@@ -724,6 +598,7 @@
       color: var(--dim);
     }
 
+    /* ── VIEW TOGGLE ── */
     .view-toggle {
       display: flex;
       gap: 4px;
@@ -754,6 +629,7 @@
       font-weight: 600;
     }
 
+    /* ── KANBAN ── */
     .k-board {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -896,6 +772,26 @@
       font-size: 13px;
     }
 
+    .k-add-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      border-radius: 8px;
+      width: 100%;
+      margin-top: 2px;
+    }
+
+    .k-add-btn:hover {
+      background: var(--panel2);
+      color: var(--text);
+    }
+
+    /* ── LIST VIEW ── */
     .list-table {
       width: 100%;
       border-collapse: separate;
@@ -1020,6 +916,7 @@
       background: var(--soft);
     }
 
+    /* ── MODAL ── */
     .overlay {
       position: fixed;
       inset: 0;
@@ -1143,6 +1040,7 @@
       font-weight: 600;
     }
 
+    /* ── SETTINGS (NOTION-STYLE) ── */
     .settings-layout {
       display: grid;
       grid-template-columns: 200px 1fr;
@@ -1391,6 +1289,7 @@
       border: 1px solid #3b3a6e;
     }
 
+    /* ── ADMIN PANEL ── */
     .admin-table {
       width: 100%;
       border-collapse: separate;
@@ -1480,6 +1379,21 @@
       color: var(--purple);
     }
 
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .status-dot.online {
+      background: var(--green);
+    }
+
+    .status-dot.offline {
+      background: var(--dim);
+    }
+
     .section-tabs {
       display: flex;
       gap: 0;
@@ -1506,6 +1420,7 @@
       font-weight: 700;
     }
 
+    /* ── EMPTY STATE ── */
     .empty {
       text-align: center;
       padding: 60px 20px;
@@ -1519,6 +1434,7 @@
       color: var(--line2);
     }
 
+    /* ── HAMBURGER ── */
     #hamburger {
       display: none;
       position: fixed;
@@ -1543,6 +1459,7 @@
       z-index: 150;
     }
 
+    /* ── RESPONSIVE ── */
     @media (max-width:1024px) {
       .admin-stat-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1633,6 +1550,7 @@
       }
     }
 
+    /* ── COMPACT MODE ── */
     body.compact main {
       padding: 16px 20px;
     }
@@ -1687,6 +1605,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- ══ HOME ══ -->
@@ -1710,9 +1629,11 @@
     <main class="flex-grow flex items-center justify-center">
       <div class="auth-card bg-white w-full rounded-[32px] p-10 border border-[#E9EFF5]">
         <div class="mb-8">
-          <span class="font-sans text-[38px] font-semibold text-[#1E293B] tracking-tight leading-none">Taskflow<span class="text-blue-600">.</span></span>
+          <span class="font-sans text-[38px] font-semibold text-[#1E293B] tracking-tight leading-none">Taskflow<span
+              class="text-blue-600">.</span></span>
         </div>
-        <div id="errorBanner" class="hidden mb-6 bg-red-50 border border-red-100 text-red-600 text-sm py-3 px-4 rounded-xl flex items-center gap-3">
+        <div id="errorBanner"
+          class="hidden mb-6 bg-red-50 border border-red-100 text-red-600 text-sm py-3 px-4 rounded-xl flex items-center gap-3">
           <i class="fa-solid fa-circle-exclamation text-base"></i>
           <span id="errorMessage">Incorrect username or password.</span>
         </div>
@@ -1723,17 +1644,22 @@
           </div>
           <form id="loginForm" onsubmit="handleAuth(event,'login')">
             <div class="mb-5">
-              <label class="block text-xs font-semibold text-[#64748B] uppercase tracking-wider mb-2">Username or Email</label>
-              <input type="text" id="loginEmail" placeholder="Username or Email" required class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px]">
+              <label class="block text-xs font-semibold text-[#64748B] uppercase tracking-wider mb-2">Username or
+                Email</label>
+              <input type="text" id="loginEmail" placeholder="Username or Email" required
+                class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px]">
             </div>
             <div class="mb-2">
               <div class="flex justify-between items-center mb-2">
                 <label class="block text-xs font-semibold text-[#64748B] uppercase tracking-wider">Password</label>
-                <a href="#" onclick="showResetModal(event)" class="text-xs font-medium text-blue-600 hover:text-blue-700">Forgot password?</a>
+                <a href="#" onclick="showResetModal(event)"
+                  class="text-xs font-medium text-blue-600 hover:text-blue-700">Forgot password?</a>
               </div>
               <div class="relative">
-                <input type="password" id="loginPassword" placeholder="Password" required class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px] pr-12">
-                <button type="button" onclick="togglePasswordVisibility('loginPassword')" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                <input type="password" id="loginPassword" placeholder="Password" required
+                  class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px] pr-12">
+                <button type="button" onclick="togglePasswordVisibility('loginPassword')"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
                   <i class="fa-regular fa-eye text-sm" id="loginPasswordEye"></i>
                 </button>
               </div>
@@ -1744,10 +1670,13 @@
                 <span class="text-xs text-[#64748B]">Remember me</span>
               </label>
             </div>
-            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-2xl shadow-lg shadow-blue-600/10 active:scale-[0.98] transition-all text-sm">Sign In</button>
+            <button type="submit"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-2xl shadow-lg shadow-blue-600/10 active:scale-[0.98] transition-all text-sm">Sign
+              In</button>
           </form>
           <div class="mt-8 text-center pt-6 border-t border-[#F1F5F9]">
-            <p class="text-xs text-[#64748B]">New to Flow? <a href="#" onclick="switchView(event,'register')" class="font-semibold text-blue-600 hover:text-blue-700 ml-1">Create an account</a></p>
+            <p class="text-xs text-[#64748B]">New to Flow? <a href="#" onclick="switchView(event,'register')"
+                class="font-semibold text-blue-600 hover:text-blue-700 ml-1">Create an account</a></p>
           </div>
         </div>
         <div id="registerSection" class="form-transition hidden">
@@ -1758,60 +1687,135 @@
           <form id="registerForm" onsubmit="handleAuth(event,'register')">
             <div class="mb-5">
               <label class="block text-xs font-semibold text-[#64748B] uppercase tracking-wider mb-2">Full Name</label>
-              <input type="text" id="registerName" placeholder="e.g. John Doe" required class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px]">
+              <input type="text" id="registerName" placeholder="e.g. John Doe" required
+                class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px]">
             </div>
             <div class="mb-5">
-              <label class="block text-xs font-semibold text-[#64748B] uppercase tracking-wider mb-2">Email Address</label>
-              <input type="email" id="registerEmail" placeholder="john@example.com" required class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px]">
+              <label class="block text-xs font-semibold text-[#64748B] uppercase tracking-wider mb-2">Email
+                Address</label>
+              <input type="email" id="registerEmail" placeholder="john@example.com" required
+                class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px]">
+            </div>
+            <div class="mb-5">
+              <label class="block text-xs font-semibold text-[#64748B] uppercase tracking-wider mb-2">Workspace</label>
+              <div class="grid grid-cols-2 gap-2 mb-3">
+                <button type="button" id="ws-mode-create" onclick="setWorkspaceMode('create')"
+                  class="py-2.5 rounded-xl text-sm font-semibold border-2 border-blue-500 bg-blue-50 text-blue-700 transition-all">Create new</button>
+                <button type="button" id="ws-mode-join" onclick="setWorkspaceMode('join')"
+                  class="py-2.5 rounded-xl text-sm font-semibold border-2 border-[#E2E8F0] bg-white text-slate-500 transition-all">Join existing</button>
+              </div>
+              <input type="text" id="registerWorkspaceName" placeholder="e.g. Acme Inc."
+                class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px]">
+              <input type="text" id="registerInviteCode" placeholder="Invite code, e.g. TASKFLOW-7F3K9"
+                class="hidden w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px] uppercase">
+              <p class="text-xs text-[#94A3B8] mt-2">Ask a teammate for their workspace's invite code to join their team instead.</p>
             </div>
             <div class="mb-6">
               <label class="block text-xs font-semibold text-[#64748B] uppercase tracking-wider mb-2">Password</label>
               <div class="relative">
-                <input type="password" id="registerPassword" placeholder="Minimum 8 characters" required class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px] pr-12">
-                <button type="button" onclick="togglePasswordVisibility('registerPassword')" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                <input type="password" id="registerPassword" placeholder="Minimum 8 characters" required
+                  class="w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl py-3.5 px-4 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:bg-white transition-all text-[15px] pr-12">
+                <button type="button" onclick="togglePasswordVisibility('registerPassword')"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
                   <i class="fa-regular fa-eye text-sm" id="registerPasswordEye"></i>
                 </button>
               </div>
             </div>
             <div class="flex items-start gap-2 mb-6">
-              <input type="checkbox" id="terms" required class="rounded border-slate-300 text-blue-600 w-4 h-4 mt-0.5 cursor-pointer">
-              <label for="terms" class="text-xs text-[#64748B] leading-normal cursor-pointer">I agree to the <a href="#" class="text-blue-600 hover:underline">Terms of Service</a> and <a href="#" class="text-blue-600 hover:underline">Privacy Policy</a>.</label>
+              <input type="checkbox" id="terms" required
+                class="rounded border-slate-300 text-blue-600 w-4 h-4 mt-0.5 cursor-pointer">
+              <label for="terms" class="text-xs text-[#64748B] leading-normal cursor-pointer">I agree to the <a href="#"
+                  class="text-blue-600 hover:underline">Terms of Service</a> and <a href="#"
+                  class="text-blue-600 hover:underline">Privacy Policy</a>.</label>
             </div>
-            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-2xl shadow-lg active:scale-[0.98] transition-all text-sm">Sign Up</button>
+            <button type="submit"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-2xl shadow-lg active:scale-[0.98] transition-all text-sm">Sign
+              Up</button>
           </form>
           <div class="mt-8 text-center pt-6 border-t border-[#F1F5F9]">
-            <p class="text-xs text-[#64748B]">Already a member? <a href="#" onclick="switchView(event,'login')" class="font-semibold text-blue-600 hover:text-blue-700 ml-1">Sign In</a></p>
+            <p class="text-xs text-[#64748B]">Already a member? <a href="#" onclick="switchView(event,'login')"
+                class="font-semibold text-blue-600 hover:text-blue-700 ml-1">Sign In</a></p>
           </div>
         </div>
       </div>
     </main>
     <footer class="w-full text-center pb-6">
-      <a href="#" onclick="show('home');return false;" class="text-xs font-semibold text-[#94A3B8] hover:text-[#64748B] inline-flex items-center gap-1.5 group">
+      <a href="#" onclick="show('home');return false;"
+        class="text-xs font-semibold text-[#94A3B8] hover:text-[#64748B] inline-flex items-center gap-1.5 group">
         <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i> Back to home
       </a>
     </footer>
-    <div id="toastNotification" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-xl hidden items-center gap-3 z-50 text-sm max-w-sm w-[calc(100%-2rem)]">
+    <div id="toastNotification"
+      class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-xl hidden items-center gap-3 z-50 text-sm max-w-sm w-[calc(100%-2rem)]">
       <div id="toastIcon" class="text-emerald-400"><i class="fa-solid fa-circle-check text-lg"></i></div>
-      <div class="flex-1"><p id="toastMessage" class="font-medium text-slate-200 leading-normal"></p></div>
+      <div class="flex-1">
+        <p id="toastMessage" class="font-medium text-slate-200 leading-normal"></p>
+      </div>
       <button onclick="closeToast()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
     </div>
+    <!-- Reset Modal -->
     <div id="resetModal" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-50 items-center justify-center p-4">
       <div class="bg-white rounded-3xl p-8 w-full max-w-sm scale-95 transition-transform shadow-2xl">
         <h3 class="text-2xl font-semibold text-slate-800 mb-2">Reset Password</h3>
         <p class="text-sm text-slate-500 mb-6">Enter your email address to receive reset instructions.</p>
         <form onsubmit="handleResetPassword(event)">
           <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
-          <input type="email" id="resetEmail" required placeholder="you@example.com" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 text-slate-800 focus:outline-none focus:border-blue-500 transition-all text-sm mb-5">
-          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-sm transition-all">Send Instructions</button>
+          <input type="email" id="resetEmail" required placeholder="you@example.com"
+            class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 text-slate-800 focus:outline-none focus:border-blue-500 transition-all text-sm mb-5">
+          <button type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-sm transition-all">Send
+            Instructions</button>
         </form>
-        <button onclick="closeResetModal()" class="mt-4 w-full text-center text-sm text-slate-400 hover:text-slate-600">Cancel</button>
+        <button onclick="closeResetModal()"
+          class="mt-4 w-full text-center text-sm text-slate-400 hover:text-slate-600">Cancel</button>
       </div>
     </div>
     <script>
-      function switchView(e, to) { if (e) e.preventDefault(); document.getElementById('loginSection').classList.toggle('hidden', to === 'register'); document.getElementById('registerSection').classList.toggle('hidden', to === 'login'); document.getElementById('errorBanner').classList.add('hidden'); }
-      function togglePasswordVisibility(id) { const inp = document.getElementById(id), eye = document.getElementById(id + 'Eye'); inp.type = inp.type === 'password' ? 'text' : 'password'; eye.classList.toggle('fa-eye'); eye.classList.toggle('fa-eye-slash'); }
-      function showToast(msg, isErr = false) { const t = document.getElementById('toastNotification'); document.getElementById('toastMessage').textContent = msg; document.getElementById('toastIcon').innerHTML = isErr ? '<i class="fa-solid fa-circle-xmark text-lg text-red-400"></i>' : '<i class="fa-solid fa-circle-check text-lg text-emerald-400"></i>'; t.classList.remove('hidden'); t.classList.add('flex', 'toast-animate'); setTimeout(() => { t.classList.add('hidden'); t.classList.remove('flex', 'toast-animate'); }, 3500); }
-      function closeToast() { const t = document.getElementById('toastNotification'); t.classList.add('hidden'); t.classList.remove('flex', 'toast-animate'); }
+      function switchView(e, to) {
+        if (e) e.preventDefault();
+        document.getElementById('loginSection').classList.toggle('hidden', to === 'register');
+        document.getElementById('registerSection').classList.toggle('hidden', to === 'login');
+        document.getElementById('errorBanner').classList.add('hidden');
+      }
+      let workspaceMode = 'create';
+      function setWorkspaceMode(mode) {
+        workspaceMode = mode;
+        const createBtn = document.getElementById('ws-mode-create');
+        const joinBtn = document.getElementById('ws-mode-join');
+        const nameInput = document.getElementById('registerWorkspaceName');
+        const codeInput = document.getElementById('registerInviteCode');
+        const activeCls = ['border-blue-500', 'bg-blue-50', 'text-blue-700'];
+        const inactiveCls = ['border-[#E2E8F0]', 'bg-white', 'text-slate-500'];
+        if (mode === 'create') {
+          createBtn.classList.add(...activeCls); createBtn.classList.remove(...inactiveCls);
+          joinBtn.classList.add(...inactiveCls); joinBtn.classList.remove(...activeCls);
+          nameInput.classList.remove('hidden'); codeInput.classList.add('hidden');
+          nameInput.required = true; codeInput.required = false;
+        } else {
+          joinBtn.classList.add(...activeCls); joinBtn.classList.remove(...inactiveCls);
+          createBtn.classList.add(...inactiveCls); createBtn.classList.remove(...activeCls);
+          codeInput.classList.remove('hidden'); nameInput.classList.add('hidden');
+          codeInput.required = true; nameInput.required = false;
+        }
+      }
+      function togglePasswordVisibility(id) {
+        const inp = document.getElementById(id), eye = document.getElementById(id + 'Eye');
+        inp.type = inp.type === 'password' ? 'text' : 'password';
+        eye.classList.toggle('fa-eye'); eye.classList.toggle('fa-eye-slash');
+      }
+      function showToast(msg, isErr = false) {
+        const t = document.getElementById('toastNotification');
+        document.getElementById('toastMessage').textContent = msg;
+        document.getElementById('toastIcon').innerHTML = isErr
+          ? '<i class="fa-solid fa-circle-xmark text-lg text-red-400"></i>'
+          : '<i class="fa-solid fa-circle-check text-lg text-emerald-400"></i>';
+        t.classList.remove('hidden'); t.classList.add('flex', 'toast-animate');
+        setTimeout(() => { t.classList.add('hidden'); t.classList.remove('flex', 'toast-animate'); }, 3500);
+      }
+      function closeToast() {
+        const t = document.getElementById('toastNotification');
+        t.classList.add('hidden'); t.classList.remove('flex', 'toast-animate');
+      }
       async function handleAuth(event, type) {
         event.preventDefault();
         const errorBanner = document.getElementById('errorBanner');
@@ -1820,13 +1824,19 @@
           const user = document.getElementById('loginEmail').value;
           const pass = document.getElementById('loginPassword').value;
           try {
-            const res = await fetch("http://localhost:5000/users/login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: user, password: pass }) });
+            const res = await fetch("http://localhost:5000/users/login", {
+              method: "POST", headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email: user, password: pass })
+            });
             const data = await res.json();
             if (res.ok) {
               if (data.token) localStorage.setItem("token", data.token);
               localStorage.setItem("user", JSON.stringify(data.user));
               localStorage.setItem("userId", data.user.id);
-              currentUser = data.user.user_name; currentUserEmail = data.user.email; isAdmin = data.user.role === 'admin';
+              currentUser = data.user.user_name;
+              currentUserEmail = data.user.email;
+              currentWorkspaceName = data.user.workspace_name || '';
+              isAdmin = data.user.role === 'admin';
               document.getElementById("userName").textContent = currentUser;
               document.getElementById("avatar").textContent = currentUser.slice(0, 2).toUpperCase();
               if (isAdmin) document.getElementById("avatar").classList.add('admin');
@@ -1834,20 +1844,64 @@
               view = "Dashboard"; renderView();
               setTimeout(() => { show("dashboard"); initHamburger(); }, 400);
               showToast("Login successful!", false);
-            } else { errorMessage.textContent = data.message || "Incorrect username or password."; errorBanner.classList.remove("hidden"); showToast("Login failed", true); }
+            } else {
+              errorMessage.textContent = data.message || "Incorrect username or password.";
+              errorBanner.classList.remove("hidden"); showToast("Login failed", true);
+            }
           } catch (err) { showToast("Cannot connect to server", true); }
         } else if (type === 'register') {
           const name = document.getElementById('registerName').value;
           const email = document.getElementById('registerEmail').value;
           const password = document.getElementById('registerPassword').value;
+          const workspaceName = document.getElementById('registerWorkspaceName').value.trim();
+          const inviteCode = document.getElementById('registerInviteCode').value.trim();
           if (!document.getElementById('terms').checked) { showToast("Please accept the terms", true); return; }
+          if (workspaceMode === 'create' && !workspaceName) { showToast("Please enter a workspace name", true); return; }
+          if (workspaceMode === 'join' && !inviteCode) { showToast("Please enter an invite code", true); return; }
           try {
-            const res = await fetch("http://localhost:5000/users/register", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ user_name: name, email, password }) });
+            const res = await fetch("http://localhost:5000/users/register", {
+              method: "POST", headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                user_name: name, email, password,
+                workspace_mode: workspaceMode,
+                workspace_name: workspaceMode === 'create' ? workspaceName : undefined,
+                invite_code: workspaceMode === 'join' ? inviteCode : undefined,
+              })
+            });
             const data = await res.json();
-            if (res.ok) { showToast("Account created successfully!", false); setTimeout(() => switchView(null, 'login'), 1500); }
+            if (res.ok) {
+              if (workspaceMode === 'create' && data.workspace?.invite_code) {
+                showWorkspaceCreatedModal(data.workspace.name, data.workspace.invite_code);
+              } else {
+                showToast("Account created successfully!", false);
+                setTimeout(() => switchView(null, 'login'), 1500);
+              }
+            }
             else showToast(data.message || "Registration failed", true);
           } catch (err) { showToast("Cannot connect to server", true); }
         }
+      }
+      function showWorkspaceCreatedModal(workspaceName, inviteCode) {
+        const root = document.getElementById('modal-root');
+        root.innerHTML = `
+        <div class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div class="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl text-center">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center mx-auto mb-4">
+              <i class="fa-solid fa-circle-check text-emerald-500 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-800 mb-1">Workspace created!</h3>
+            <p class="text-sm text-slate-500 mb-5">"${workspaceName}" is ready. Share this invite code with your teammates so they can join.</p>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 mb-5">
+              <p class="text-xs text-slate-400 uppercase tracking-wider mb-1">Invite Code</p>
+              <p class="text-lg font-bold text-blue-600 tracking-wide" id="invite-code-text">${inviteCode}</p>
+            </div>
+            <button onclick="copyInviteCode('${inviteCode}')" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 rounded-xl text-sm mb-3 transition-all"><i class="fa-regular fa-copy mr-1.5"></i>Copy code</button>
+            <button onclick="document.getElementById('modal-root').innerHTML='';switchView(null,'login')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-sm transition-all">Continue to sign in</button>
+          </div>
+        </div>`;
+      }
+      function copyInviteCode(code) {
+        navigator.clipboard?.writeText(code).then(() => showToast('Invite code copied!', false)).catch(() => {});
       }
       function showResetModal(e) { if (e) e.preventDefault(); const m = document.getElementById('resetModal'); m.classList.remove('hidden'); m.classList.add('flex'); setTimeout(() => { m.firstElementChild.classList.remove('scale-95'); m.firstElementChild.classList.add('scale-100'); }, 10); }
       function closeResetModal() { const m = document.getElementById('resetModal'); m.firstElementChild.classList.replace('scale-100', 'scale-95'); setTimeout(() => { m.classList.add('hidden'); m.classList.remove('flex'); }, 150); }
@@ -1871,27 +1925,6 @@
           <p class="sub" id="view-sub"></p>
         </div>
         <div class="dash-head-right" style="position:relative;">
-
-          <!-- THEME TOGGLE (added — next to bell) -->
-          <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle dark mode">
-            <i class="fa-solid fa-moon" id="themeToggleIcon"></i>
-          </button>
-
-          <!-- NOTIFICATION BELL (added — next to username) -->
-          <div class="notif-wrap">
-            <button class="notif-btn" id="notifBtn" title="Notifications">
-              <i class="fa-regular fa-bell"></i>
-              <span class="notif-badge hidden" id="notifBadge">0</span>
-            </button>
-            <div class="notif-panel hidden" id="notifPanel">
-              <div class="np-head">
-                <h4>Notifications</h4>
-                <button id="markAllRead">Mark all read</button>
-              </div>
-              <ul class="notif-list" id="notifList"></ul>
-            </div>
-          </div>
-
           <span id="userName"></span>
           <div class="avatar" id="avatar" title="Profile"></div>
           <div id="profileMenu" class="profile-dropdown hidden">
@@ -1899,10 +1932,15 @@
               <strong id="pd-name"></strong>
               <span id="pd-email"></span>
             </div>
-            <a onclick="switchToView('Profile');document.getElementById('profileMenu').classList.add('hidden')"><i class="fa-solid fa-user"></i> My Profile</a>
-            <a onclick="switchToView('Settings');document.getElementById('profileMenu').classList.add('hidden')"><i class="fa-solid fa-gear"></i> Settings</a>
-            <a id="adminMenuLink" onclick="switchToView('Admin');document.getElementById('profileMenu').classList.add('hidden')" class="hidden"><i class="fa-solid fa-shield-halved"></i> Admin Panel</a>
-            <a class="danger" onclick="document.getElementById('logout').click()"><i class="fa-solid fa-right-from-bracket"></i> Sign out</a>
+            <a onclick="switchToView('Profile');document.getElementById('profileMenu').classList.add('hidden')"><i
+                class="fa-solid fa-user"></i> My Profile</a>
+            <a onclick="switchToView('Settings');document.getElementById('profileMenu').classList.add('hidden')"><i
+                class="fa-solid fa-gear"></i> Settings</a>
+            <a id="adminMenuLink"
+              onclick="switchToView('Admin');document.getElementById('profileMenu').classList.add('hidden')"
+              class="hidden"><i class="fa-solid fa-shield-halved"></i> Admin Panel</a>
+            <a class="danger" onclick="document.getElementById('logout').click()"><i
+                class="fa-solid fa-right-from-bracket"></i> Sign out</a>
           </div>
         </div>
       </div>
@@ -1915,7 +1953,7 @@
   <script>
     // ══════════════════════ STATE ══════════════════════
     const API = "http://localhost:5000";
-    let currentUser = null, currentUserEmail = null, isAdmin = false;
+    let currentUser = null, currentUserEmail = null, currentWorkspaceName = '', isAdmin = false;
     let view = "Dashboard", settingsTab = "profile", adminTab = "users";
     let taskView = "kanban", taskFilter = "all", taskSearch = "";
     let weeklyData = null;
@@ -1931,40 +1969,7 @@
     let board = { todo: [], doing: [], done: [] };
     let bid = 100, dragData = null;
 
-    // ══ NOTIFICATIONS (added) ══
-    let notifications = [];
-    function pushNotif(text, icon = 'fa-circle-info') {
-      notifications.unshift({ id: Date.now() + Math.random(), text, icon, when: Date.now(), read: false });
-      if (notifications.length > 40) notifications.pop();
-      renderNotifs();
-    }
-    function renderNotifs() {
-      const badge = document.getElementById('notifBadge');
-      const list = document.getElementById('notifList');
-      if (!badge || !list) return;
-      const unread = notifications.filter(n => !n.read).length;
-      if (unread > 0) { badge.textContent = unread > 9 ? '9+' : unread; badge.classList.remove('hidden'); }
-      else badge.classList.add('hidden');
-      list.innerHTML = notifications.length === 0
-        ? '<div class="notif-empty">No notifications yet.</div>'
-        : notifications.map(n => `
-          <li class="${n.read ? '' : 'unread'}">
-            <span class="n-ic"><i class="fa-solid ${n.icon}"></i></span>
-            <div><div class="n-txt">${escHtml(n.text)}</div><div class="n-when">${timeAgo(n.when)}</div></div>
-          </li>`).join('');
-    }
-    function initNotifs() {
-      const btn = document.getElementById('notifBtn');
-      const panel = document.getElementById('notifPanel');
-      const markAll = document.getElementById('markAllRead');
-      if (!btn || !panel) return;
-      btn.addEventListener('click', e => { e.stopPropagation(); panel.classList.toggle('hidden'); renderNotifs(); });
-      markAll.addEventListener('click', e => { e.stopPropagation(); notifications.forEach(n => n.read = true); renderNotifs(); });
-      panel.addEventListener('click', e => e.stopPropagation());
-      document.addEventListener('click', () => panel.classList.add('hidden'));
-      renderNotifs();
-    }
-
+    // Admin users state — populated from real backend via loadAdminUsers()
     let adminUsers = [];
     let adminStats = { total_users: 0, total_tasks: 0, done_tasks: 0, admins: 0 };
     let adminActivity = [];
@@ -1984,7 +1989,6 @@
 
     document.getElementById("logout").addEventListener("click", () => {
       currentUser = null; localStorage.removeItem("token"); localStorage.removeItem("userId"); localStorage.removeItem("user");
-      notifications = []; renderNotifs();
       document.getElementById("loginEmail").value = ""; document.getElementById("loginPassword").value = "";
       show("home");
     });
@@ -1999,6 +2003,7 @@
     });
     document.addEventListener("click", () => document.getElementById("profileMenu")?.classList.add("hidden"));
 
+    // ══════════════════════ NAV ══════════════════════
     const NAV_ITEMS = [
       { name: "Dashboard", icon: "fa-gauge", section: "MAIN" },
       { name: "Tasks", icon: "fa-list-check", section: null },
@@ -2029,10 +2034,12 @@
       });
     }
 
+    // ══════════════════════ RENDER ROUTER ══════════════════════
     function renderView() {
       buildNav();
       const title = $("#view-title"), sub = $("#view-sub"), body = $("#view-body");
       if (chartInstance) { chartInstance.destroy(); chartInstance = null; }
+
       if (view === "Dashboard") {
         title.textContent = "Hello, " + currentUser + "";
         sub.textContent = "Here's what's happening in your workspace.";
@@ -2047,6 +2054,7 @@
           initChart();
           loadActivity();
         });
+
       } else if (view === "Tasks") {
         title.textContent = "Tasks";
         sub.textContent = "Switch between Kanban and List view. Drag, filter, search.";
@@ -2067,22 +2075,46 @@
       </div>
       <div id="tasks-body"></div>`;
         loadTasks().then(tasks => { if (tasks) board = formatTasks(tasks); renderTasksBody(); });
+
       } else if (view === "Projects") {
-        title.textContent = "Projects"; sub.textContent = "Organize your work into projects."; body.innerHTML = renderProjects();
+        title.textContent = "Projects";
+        sub.textContent = "Organize your work into projects.";
+        body.innerHTML = '<div class="empty fade"><span class="icon"><i class="fa-solid fa-spinner fa-spin"></i></span><p>Loading projects…</p></div>';
+        loadProjects().then(data => {
+          if (data) projects = data;
+          body.innerHTML = renderProjects();
+        });
+
       } else if (view === "Profile") {
-        title.textContent = "My Profile"; sub.textContent = "Your account information."; body.innerHTML = renderProfile();
+        title.textContent = "My Profile";
+        sub.textContent = "Your account information.";
+        body.innerHTML = renderProfile();
+
       } else if (view === "Settings") {
-        title.textContent = "Settings"; sub.textContent = "Manage your preferences and account."; body.innerHTML = renderSettings(); bindSettingsNav();
+        title.textContent = "Settings";
+        sub.textContent = "Manage your preferences and account.";
+        body.innerHTML = renderSettings();
+        bindSettingsNav();
+
       } else if (view === "Admin") {
         if (!isAdmin) { body.innerHTML = '<div class="empty fade"><span class="icon">🔒</span><p>Access denied.</p></div>'; return; }
-        title.textContent = "Admin Panel"; sub.textContent = "Manage users, monitor activity, and configure the platform.";
+        title.textContent = "Admin Panel";
+        sub.textContent = "Manage users, monitor activity, and configure the platform.";
         body.innerHTML = '<div class="empty fade"><span class="icon"><i class="fa-solid fa-spinner fa-spin"></i></span><p>Loading admin data…</p></div>';
-        loadAdminUsers().then(() => { body.innerHTML = renderAdmin(); bindAdminTabs(); });
-      } else { title.textContent = view; sub.textContent = ""; body.innerHTML = '<div class="empty fade"><span class="icon">◷</span><p>Coming soon.</p></div>'; }
+        loadAdminUsers().then(() => {
+          body.innerHTML = renderAdmin();
+          bindAdminTabs();
+        });
+      } else {
+        title.textContent = view;
+        sub.textContent = "";
+        body.innerHTML = '<div class="empty fade"><span class="icon">◷</span><p>Coming soon.</p></div>';
+      }
     }
 
     function filterLabel(f) { return { all: 'All', todo: 'To Do', in_progress: 'In Progress', done: 'Done', High: '🔴 High', Medium: '🔵 Medium', Low: '⚫ Low' }[f] || f; }
 
+    // ══════════════════════ DASHBOARD HTML ══════════════════════
     function dashboardHTML() {
       const todo = board.todo.length, doing = board.doing.length, done = board.done.length, total = todo + doing + done;
       const pct = total > 0 ? Math.round((done / total) * 100) : 0;
@@ -2095,15 +2127,19 @@
   </div>
   <div class="lower fade">
     <section class="panel">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;"><h3 style="margin:0;">Tasks Created This Week</h3></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <h3 style="margin:0;">Tasks Created This Week</h3>
+      </div>
       <div class="chart-wrap"><canvas id="weeklyChart"></canvas></div>
     </section>
     <section class="panel"><h3>Recent Activity</h3><ul class="feed"></ul></section>
   </div>
   <div style="margin-top:18px;" class="fade">
     <div class="panel">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;"><h3 style="margin:0;">Quick Overview</h3>
-        <button onclick="switchToView('Tasks')" style="font-size:13px;color:var(--accent);border:none;background:none;font-weight:600;">View all →</button></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <h3 style="margin:0;">Quick Overview</h3>
+        <button onclick="switchToView('Tasks')" style="font-size:13px;color:var(--accent);border:none;background:none;font-weight:600;">View all →</button>
+      </div>
       <div style="display:flex;flex-direction:column;gap:0;">
         ${[...board.todo.slice(0, 3), ...board.doing.slice(0, 2)].map(t => `
         <div style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);">
@@ -2118,16 +2154,38 @@
     }
 
     function initChart() {
-      const canvas = document.getElementById("weeklyChart"); if (!canvas) return;
+      const canvas = document.getElementById("weeklyChart");
+      if (!canvas) return;
       const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
       const data = weeklyData || [0, 0, 0, 0, 0, 0, 0];
-      chartInstance = new Chart(canvas, { type: "bar", data: { labels: days, datasets: [{ data, backgroundColor: "rgba(37,99,235,.8)", borderRadius: 6, borderSkipped: false }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { font: { size: 11 }, color: "#9aa8bd" } }, y: { grid: { color: "#e2e9f3" }, ticks: { stepSize: 1, font: { size: 11 }, color: "#9aa8bd" }, beginAtZero: true } } } });
+      chartInstance = new Chart(canvas, {
+        type: "bar",
+        data: {
+          labels: days,
+          datasets: [{ data, backgroundColor: "rgba(37,99,235,.8)", borderRadius: 6, borderSkipped: false }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false }, ticks: { font: { size: 11 }, color: "#9aa8bd" } },
+            y: { grid: { color: "#e2e9f3" }, ticks: { stepSize: 1, font: { size: 11 }, color: "#9aa8bd" }, beginAtZero: true }
+          }
+        }
+      });
     }
 
+    // ══════════════════════ TASKS ══════════════════════
     function renderTasksBody() {
-      const body = document.getElementById("tasks-body"); if (!body) return;
-      if (taskView === "kanban") { body.innerHTML = '<div class="k-board fade" id="k-board"></div>'; renderBoard(); }
-      else { body.innerHTML = renderListView(); bindListEvents(); }
+      const body = document.getElementById("tasks-body");
+      if (!body) return;
+      if (taskView === "kanban") {
+        body.innerHTML = '<div class="k-board fade" id="k-board"></div>';
+        renderBoard();
+      } else {
+        body.innerHTML = renderListView();
+        bindListEvents();
+      }
     }
 
     function getFilteredTasks() {
@@ -2145,7 +2203,14 @@
       return `
   <div class="panel fade" style="padding:0;overflow:hidden;">
     <table class="list-table">
-      <thead><tr><th style="width:40%">Title</th><th>Status</th><th>Priority</th><th>Assignee</th><th>Due Date</th><th>Actions</th></tr></thead>
+      <thead><tr>
+        <th style="width:40%">Title</th>
+        <th>Status</th>
+        <th>Priority</th>
+        <th>Assignee</th>
+        <th>Due Date</th>
+        <th>Actions</th>
+      </tr></thead>
       <tbody>
         ${tasks.map(t => `
         <tr>
@@ -2165,15 +2230,16 @@
     }
 
     async function deleteTaskFromList(id, col) {
-      const removed = board[col].find(t => t.id === id);
-      try { await fetch(`${API}/tasks/${id}`, { method: "DELETE", headers: { "Authorization": `Bearer ${token()}` } }); } catch (e) { }
+      try {
+        await fetch(`${API}/tasks/${id}`, { method: "DELETE", headers: { "Authorization": `Bearer ${token()}` } });
+      } catch (e) { }
       board[col] = board[col].filter(t => t.id !== id);
-      if (removed) pushNotif(`Task "${removed.text}" was deleted.`, 'fa-trash');
       renderTasksBody();
     }
 
     function bindListEvents() { }
 
+    // ══════════════════════ KANBAN ══════════════════════
     function renderBoard() {
       const wrap = $("#k-board"); if (!wrap) return; wrap.innerHTML = "";
       const filtered = taskSearch || taskFilter !== 'all';
@@ -2188,7 +2254,11 @@
         }
         const sec = document.createElement("section"); sec.className = "k-col";
         sec.innerHTML = `
-      <div class="k-head"><span class="dot" style="background:${col.accent}"></span><h3>${col.title}</h3><span class="count">${board[col.id].length}</span></div>
+      <div class="k-head">
+        <span class="dot" style="background:${col.accent}"></span>
+        <h3>${col.title}</h3>
+        <span class="count">${board[col.id].length}</span>
+      </div>
       <div class="k-cards" id="cards-${col.id}"></div>
       <input class="k-input" placeholder="+ Add a task, press Enter" id="input-${col.id}" />`;
         sec.addEventListener("dragover", e => { e.preventDefault(); sec.classList.add("over"); });
@@ -2199,8 +2269,9 @@
           const task = board[dragData.from].find(t => t.id === dragData.id);
           board[dragData.from] = board[dragData.from].filter(t => t.id !== dragData.id);
           board[col.id].push(task);
-          pushNotif(`"${task.text}" moved to ${col.title}.`, 'fa-arrows-left-right');
-          try { await fetch(`${API}/tasks/${task.id}`, { method: "PATCH", headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token()}` }, body: JSON.stringify({ status: col.id === "doing" ? "in_progress" : col.id }) }); } catch (e) { }
+          try {
+            await fetch(`${API}/tasks/${task.id}`, { method: "PATCH", headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token()}` }, body: JSON.stringify({ status: col.id === "doing" ? "in_progress" : col.id }) });
+          } catch (e) { }
           dragData = null; renderBoard();
         });
         const cards = sec.querySelector(`#cards-${col.id}`);
@@ -2220,7 +2291,6 @@
           c.addEventListener("click", e => { if (e.target.classList.contains("del")) return; openModal(t.id); });
           c.querySelector(".del").addEventListener("click", async e => {
             e.stopPropagation();
-            pushNotif(`"${t.text}" was deleted.`, 'fa-trash');
             try { await fetch(`${API}/tasks/${t.id}`, { method: "DELETE", headers: { "Authorization": `Bearer ${token()}` } }); } catch (e) { }
             board[col.id] = board[col.id].filter(x => x.id !== t.id);
             renderBoard();
@@ -2237,15 +2307,20 @@
             const data = await res.json();
             board[col.id].push({ id: data.id || ("b" + bid++), text, desc: "", priority: "Medium", assignee: defAssignee, due: "" });
           } catch (er) { board[col.id].push({ id: "b" + bid++, text, desc: "", priority: "Medium", assignee: defAssignee, due: "" }); }
-          pushNotif(`New task added: "${text}".`, 'fa-plus');
           input.value = ""; renderBoard();
         });
         wrap.appendChild(sec);
       });
     }
 
-    function openModal(id) { const col = colOf(id); const t = board[col].find(x => x.id === id); openTaskModal(t, col, false); }
-    function openCreateModal() { openTaskModal({ id: null, text: "", desc: "", priority: "Medium", assignee: loadPrefs().defaultAssignee || "No one", due: "" }, "todo", true); }
+    // ══════════════════════ TASK MODAL ══════════════════════
+    function openModal(id) {
+      const col = colOf(id); const t = board[col].find(x => x.id === id);
+      openTaskModal(t, col, false);
+    }
+    function openCreateModal() {
+      openTaskModal({ id: null, text: "", desc: "", priority: "Medium", assignee: loadPrefs().defaultAssignee || "No one", due: "" }, "todo", true);
+    }
     function openTaskModal(t, col, isCreate) {
       const root = $("#modal-root");
       root.innerHTML = `
@@ -2254,17 +2329,25 @@
       <h2>${isCreate ? "New Task" : "Edit Task"}</h2>
       <label class="m-label">Title</label>
       <input id="m-title" class="m-field" value="${escAttr(t.text)}" placeholder="Task title…" />
-      <div style="margin-top:16px;"><label class="m-label">Description</label>
-        <textarea id="m-desc" class="m-field" placeholder="Add details, context, links…">${escHtml(t.desc || "")}</textarea></div>
+      <div style="margin-top:16px;">
+        <label class="m-label">Description</label>
+        <textarea id="m-desc" class="m-field" placeholder="Add details, context, links…">${escHtml(t.desc || "")}</textarea>
+      </div>
       <div class="m-row">
         <div class="m-group"><label class="m-label">Status</label>
-          <select id="m-status" class="m-field">${BCOLS.map(c => `<option value="${c.id}" ${c.id === col ? "selected" : ""}>${c.title}</option>`).join("")}</select></div>
+          <select id="m-status" class="m-field">
+            ${BCOLS.map(c => `<option value="${c.id}" ${c.id === col ? "selected" : ""}>${c.title}</option>`).join("")}
+          </select></div>
         <div class="m-group"><label class="m-label">Priority</label>
-          <select id="m-prio" class="m-field">${Object.keys(PRIORITIES).map(p => `<option ${p === t.priority ? "selected" : ""}>${p}</option>`).join("")}</select></div>
+          <select id="m-prio" class="m-field">
+            ${Object.keys(PRIORITIES).map(p => `<option ${p === t.priority ? "selected" : ""}>${p}</option>`).join("")}
+          </select></div>
       </div>
       <div class="m-row">
         <div class="m-group"><label class="m-label">Assigned to</label>
-          <select id="m-assignee" class="m-field">${ASSIGNEES.map(a => `<option ${a === t.assignee ? "selected" : ""}>${a}</option>`).join("")}</select></div>
+          <select id="m-assignee" class="m-field">
+            ${ASSIGNEES.map(a => `<option ${a === t.assignee ? "selected" : ""}>${a}</option>`).join("")}
+          </select></div>
         <div class="m-group"><label class="m-label">Due Date</label>
           <input id="m-due" type="date" class="m-field" value="${t.due || ""}" /></div>
       </div>
@@ -2283,46 +2366,65 @@
         $("#m-delete").addEventListener("click", async () => {
           try { await fetch(`${API}/tasks/${t.id}`, { method: "DELETE", headers: { "Authorization": `Bearer ${token()}` } }); } catch (e) { }
           board[col] = board[col].filter(x => x.id !== t.id);
-          pushNotif(`"${t.text}" was deleted.`, 'fa-trash');
           close(); renderTasksBody();
         });
       }
       $("#m-save").addEventListener("click", async () => {
         const newText = $("#m-title").value.trim() || t.text;
-        const newDesc = $("#m-desc").value, newPrio = $("#m-prio").value, newAssign = $("#m-assignee").value, newDue = $("#m-due").value, targetCol = $("#m-status").value;
+        const newDesc = $("#m-desc").value;
+        const newPrio = $("#m-prio").value;
+        const newAssign = $("#m-assignee").value;
+        const newDue = $("#m-due").value;
+        const targetCol = $("#m-status").value;
         if (isCreate) {
           try {
             const res = await fetch(`${API}/tasks`, { method: "POST", headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token()}` }, body: JSON.stringify({ title: newText, status: targetCol === "doing" ? "in_progress" : targetCol, assignee: newAssign, priority: newPrio, due_date: newDue || null }) });
             const data = await res.json();
             board[targetCol].push({ id: data.id || ("b" + bid++), text: newText, desc: newDesc, priority: newPrio, assignee: newAssign, due: newDue });
           } catch (e) { board[targetCol].push({ id: "b" + bid++, text: newText, desc: newDesc, priority: newPrio, assignee: newAssign, due: newDue }); }
-          pushNotif(`New task created: "${newText}".`, 'fa-plus');
         } else {
           t.text = newText; t.desc = newDesc; t.priority = newPrio; t.assignee = newAssign; t.due = newDue;
           if (targetCol !== col) { board[col] = board[col].filter(x => x.id !== t.id); board[targetCol].push(t); }
-          try { await fetch(`${API}/tasks/${t.id}`, { method: "PUT", headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token()}` }, body: JSON.stringify({ title: t.text, status: targetCol === "doing" ? "in_progress" : targetCol, assignee: t.assignee, priority: t.priority, due_date: t.due || null }) }); } catch (e) { }
-          pushNotif(`"${t.text}" was updated.`, 'fa-pen');
+          try {
+            await fetch(`${API}/tasks/${t.id}`, { method: "PUT", headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token()}` }, body: JSON.stringify({ title: t.text, status: targetCol === "doing" ? "in_progress" : targetCol, assignee: t.assignee, priority: t.priority, due_date: t.due || null }) });
+          } catch (e) { }
         }
         close(); renderTasksBody();
       });
     }
 
-    let projects = [
-      { id: "p1", name: "Taskflow App", description: "Main project for task management", color: "#2563eb", tasks: 12, status: "active" },
-      { id: "p2", name: "Landing Page", description: "Marketing website redesign", color: "#7c3aed", tasks: 5, status: "active" },
-    ];
+    // ══════════════════════ PROJECTS ══════════════════════
+    let projects = [];
+    async function loadProjects() {
+      try {
+        const res = await fetch(`${API}/projects`, { headers: { "Authorization": `Bearer ${token()}` } });
+        return res.ok ? await res.json() : null;
+      } catch (e) { return null; }
+    }
     function renderProjects() {
+      if (!projects.length) return `
+  <div class="fade">
+    <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
+      <button onclick="openNewProjectModal()" class="btn-solid"><i class="fa-solid fa-plus"></i> New Project</button>
+    </div>
+    <div class="empty"><span class="icon"><i class="fa-solid fa-folder-open"></i></span><p>No projects yet. Create your first one →</p></div>
+  </div>`;
       return `
   <div class="fade">
-    <div style="display:flex;justify-content:flex-end;margin-bottom:16px;"><button onclick="openNewProjectModal()" class="btn-solid"><i class="fa-solid fa-plus"></i> New Project</button></div>
+    <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
+      <button onclick="openNewProjectModal()" class="btn-solid"><i class="fa-solid fa-plus"></i> New Project</button>
+    </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;">
       ${projects.map(p => `
-      <div class="panel" style="border-top:4px solid ${p.color};cursor:pointer;" onclick="openProjectDetail('${p.id}')">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;"><h3 style="font-size:16px;margin:0;">${escHtml(p.name)}</h3><span class="tag">${p.status}</span></div>
-        <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">${escHtml(p.description)}</p>
+      <div class="panel" style="border-top:4px solid ${p.color};cursor:pointer;" onclick="openProjectDetail(${p.id})">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <h3 style="font-size:16px;margin:0;">${escHtml(p.name)}</h3>
+          <span class="tag">${p.status}</span>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">${escHtml(p.description || '')}</p>
         <div style="display:flex;align-items:center;justify-content:space-between;">
-          <span style="font-size:12px;color:var(--dim);"><i class="fa-solid fa-list-check"></i> ${p.tasks} tasks</span>
-          <button onclick="removeProject('${p.id}');event.stopPropagation();" style="border:none;background:none;color:var(--dim);font-size:13px;"><i class="fa-solid fa-trash"></i></button>
+          <span style="font-size:12px;color:var(--dim);"><i class="fa-solid fa-list-check"></i> ${p.task_count ?? 0} tasks</span>
+          <button onclick="removeProject(${p.id});event.stopPropagation();" style="border:none;background:none;color:var(--dim);font-size:13px;"><i class="fa-solid fa-trash"></i></button>
         </div>
       </div>`).join('')}
     </div>
@@ -2334,36 +2436,63 @@
   <div class="overlay" id="ov">
     <div class="modal" style="max-width:420px;" role="dialog">
       <h2>New Project</h2>
-      <label class="m-label">Name</label><input id="pj-name" class="m-field" placeholder="Project name…" />
-      <div style="margin-top:14px;"><label class="m-label">Description</label><input id="pj-desc" class="m-field" placeholder="Short description…" /></div>
-      <div style="margin-top:14px;"><label class="m-label">Color</label>
-        <div class="color-picker" style="margin-top:6px;">${['#2563eb', '#7c3aed', '#16a34a', '#dc2626', '#ea580c', '#0891b2'].map(c => `<div class="color-dot" style="background:${c};" onclick="$$('.color-dot').forEach(d=>d.classList.remove('selected'));this.classList.add('selected');window._pjColor='${c}'"></div>`).join('')}</div></div>
-      <div class="m-actions"><button class="btn-ghost" id="m-cancel">Cancel</button><button class="btn-solid" id="m-save">Create Project</button></div>
+      <label class="m-label">Name</label>
+      <input id="pj-name" class="m-field" placeholder="Project name…" />
+      <div style="margin-top:14px;">
+        <label class="m-label">Description</label>
+        <input id="pj-desc" class="m-field" placeholder="Short description…" />
+      </div>
+      <div style="margin-top:14px;">
+        <label class="m-label">Color</label>
+        <div class="color-picker" style="margin-top:6px;">
+          ${['#2563eb', '#7c3aed', '#16a34a', '#dc2626', '#ea580c', '#0891b2'].map(c => `<div class="color-dot" style="background:${c};" onclick="$$('.color-dot').forEach(d=>d.classList.remove('selected'));this.classList.add('selected');window._pjColor='${c}'"></div>`).join('')}
+        </div>
+      </div>
+      <div class="m-actions">
+        <button class="btn-ghost" id="m-cancel">Cancel</button>
+        <button class="btn-solid" id="m-save">Create Project</button>
+      </div>
     </div>
   </div>`;
       window._pjColor = '#2563eb'; $$('.color-dot')[0].classList.add('selected');
       const close = () => (root.innerHTML = "");
       $("#m-cancel").addEventListener("click", close);
       $("#ov").addEventListener("click", e => { if (e.target.id === "ov") close(); });
-      $("#m-save").addEventListener("click", () => {
-        const name = $("#pj-name").value.trim(); if (!name) return;
-        projects.push({ id: "p" + Date.now(), name, description: $("#pj-desc").value, color: window._pjColor || '#2563eb', tasks: 0, status: "active" });
-        pushNotif(`Project "${name}" was created.`, 'fa-folder-plus');
-        close(); renderView();
+      $("#m-save").addEventListener("click", async () => {
+        const name = $("#pj-name").value.trim();
+        if (!name) return;
+        const description = $("#pj-desc").value.trim();
+        const color = window._pjColor || '#2563eb';
+        try {
+          const res = await fetch(`${API}/projects`, { method: "POST", headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token()}` }, body: JSON.stringify({ name, description, color }) });
+          const data = await res.json();
+          if (res.ok) { close(); switchToView('Projects'); }
+          else { showAdminToast(data.message || 'Could not create project.', true); }
+        } catch (e) { showAdminToast('Cannot connect to server.', true); }
       });
     }
-    function removeProject(id) { projects = projects.filter(p => p.id !== id); renderView(); }
+    async function removeProject(id) {
+      try {
+        const res = await fetch(`${API}/projects/${id}`, { method: "DELETE", headers: { "Authorization": `Bearer ${token()}` } });
+        const data = await res.json();
+        if (res.ok) { projects = projects.filter(p => p.id !== id); renderView(); }
+        else { showAdminToast(data.message || 'Could not delete project.', true); }
+      } catch (e) { showAdminToast('Cannot connect to server.', true); }
+    }
     function openProjectDetail(id) {
-      const p = projects.find(x => x.id === id); if (!p) return;
+      const p = projects.find(x => x.id === id);
+      if (!p) return;
       const root = $("#modal-root");
       root.innerHTML = `
   <div class="overlay" id="ov">
     <div class="modal" style="max-width:420px;">
       <h2 style="display:flex;align-items:center;gap:10px;"><span style="width:14px;height:14px;border-radius:4px;background:${p.color};display:inline-block;"></span>${escHtml(p.name)}</h2>
-      <p style="font-size:14px;color:var(--muted);margin-bottom:18px;">${escHtml(p.description)}</p>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:18px;">${escHtml(p.description || 'No description yet.')}</p>
       <div class="s-row"><div class="s-row-label">Status</div><span class="tag">${p.status}</span></div>
-      <div class="s-row"><div class="s-row-label">Tasks</div><span style="color:var(--muted);">${p.tasks}</span></div>
-      <div class="m-actions"><button class="btn-ghost" id="m-cancel">Close</button></div>
+      <div class="s-row"><div class="s-row-label">Tasks</div><span style="color:var(--muted);">${p.task_count ?? 0}</span></div>
+      <div class="m-actions">
+        <button class="btn-ghost" id="m-cancel">Close</button>
+      </div>
     </div>
   </div>`;
       const close = () => (root.innerHTML = "");
@@ -2371,26 +2500,39 @@
       $("#ov").addEventListener("click", e => { if (e.target.id === "ov") close(); });
     }
 
+    // ══════════════════════ PROFILE ══════════════════════
     function renderProfile() {
       const stored = JSON.parse(localStorage.getItem('user') || '{}');
       return `
   <div class="panel fade" style="max-width:520px;">
     <div style="display:flex;align-items:center;gap:16px;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:24px;">
       <div class="avatar" style="width:72px;height:72px;font-size:26px;${isAdmin ? 'background:var(--purple)' : ''}">${(currentUser || '').slice(0, 2).toUpperCase()}</div>
-      <div><div style="font-weight:700;font-size:18px;">${currentUser}</div>
+      <div>
+        <div style="font-weight:700;font-size:18px;">${currentUser}</div>
         <div style="font-size:13px;color:var(--muted);">${currentUserEmail || stored.email || ''}</div>
-        ${isAdmin ? '<span class="pro-badge" style="margin-top:5px;display:inline-block;">ADMIN</span>' : '<span class="tag" style="margin-top:5px;">Free Plan</span>'}</div>
+        ${isAdmin ? '<span class="pro-badge" style="margin-top:5px;display:inline-block;">ADMIN</span>' : '<span class="tag" style="margin-top:5px;">Free Plan</span>'}
+      </div>
     </div>
     <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);">
       <div><div style="font-weight:600;font-size:14px;">Display Name</div></div>
-      <input id="profile-username" style="text-align:right;border:1px solid var(--line2);background:var(--panel2);border-radius:8px;padding:7px 12px;color:var(--text);font-size:14px;width:55%;" value="${currentUser || ''}" /></div>
+      <input id="profile-username" style="text-align:right;border:1px solid var(--line2);background:var(--panel2);border-radius:8px;padding:7px 12px;color:var(--text);font-size:14px;width:55%;" value="${currentUser || ''}" />
+    </div>
     <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);">
-      <div style="font-weight:600;font-size:14px;">Email</div><span style="color:var(--muted);font-size:14px;">${currentUserEmail || stored.email || '—'}</span></div>
+      <div style="font-weight:600;font-size:14px;">Email</div>
+      <span style="color:var(--muted);font-size:14px;">${currentUserEmail || stored.email || '—'}</span>
+    </div>
     <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:22px;">
-      <div style="font-weight:600;font-size:14px;">Password</div><span style="color:var(--muted);font-size:18px;letter-spacing:3px;">••••••••</span></div>
+      <div style="font-weight:600;font-size:14px;">Password</div>
+      <span style="color:var(--muted);font-size:18px;letter-spacing:3px;">••••••••</span>
+    </div>
     <div id="profile-msg" style="font-size:13px;margin-bottom:12px;"></div>
     <button id="profile-save" class="btn-solid" style="width:100%;">Save Changes</button>
   </div>`;
+      // (bind after rendering)
+      setTimeout(() => {
+        const btn = document.getElementById('profile-save');
+        if (btn) btn.addEventListener('click', saveProfile);
+      }, 0);
     }
     async function saveProfile() {
       const newName = document.getElementById('profile-username').value.trim();
@@ -2404,12 +2546,11 @@
           document.getElementById('userName').textContent = currentUser;
           document.getElementById('avatar').textContent = currentUser.slice(0, 2).toUpperCase();
           msg.style.color = 'var(--green)'; msg.textContent = 'Username updated!';
-          pushNotif('Your profile was updated.', 'fa-user-pen');
         } else { msg.style.color = 'var(--red)'; msg.textContent = data.message || 'Update failed.'; }
       } catch (e) { msg.style.color = 'var(--red)'; msg.textContent = 'Cannot connect to server.'; }
     }
-    document.addEventListener('click', (e) => { if (e.target && e.target.id === 'profile-save') saveProfile(); });
 
+    // ══════════════════════ SETTINGS (NOTION-STYLE) ══════════════════════
     let settingsSection = 'profile';
     const SETTINGS_TABS = [
       { id: 'profile', icon: 'fa-user', label: 'Profile', section: 'ACCOUNT' },
@@ -2423,105 +2564,225 @@
       return `
   <div class="settings-layout fade">
     <div class="settings-nav" id="settings-nav-list">
-      ${SETTINGS_TABS.map((t, i, arr) => { const showSection = t.section && (i === 0 || arr[i - 1].section !== t.section); return `${showSection ? `<div class="s-section">${t.section}</div>` : ''}<a class="${settingsSection === t.id ? 'active' : ''}" onclick="settingsSection='${t.id}';renderSettings_body()"><i class="fa-solid ${t.icon}"></i>${t.label}</a>`; }).join('')}
+      ${SETTINGS_TABS.map((t, i, arr) => {
+        const showSection = t.section && (i === 0 || arr[i - 1].section !== t.section);
+        return `${showSection ? `<div class="s-section">${t.section}</div>` : ''}
+        <a class="${settingsSection === t.id ? 'active' : ''}" onclick="settingsSection='${t.id}';renderSettings_body()"><i class="fa-solid ${t.icon}"></i>${t.label}</a>`;
+      }).join('')}
     </div>
-    <div class="settings-body" id="settings-body-content">${settingsBodyHTML()}</div>
+    <div class="settings-body" id="settings-body-content">
+      ${settingsBodyHTML()}
+    </div>
   </div>`;
     }
-    function bindSettingsNav() { $$('#settings-nav-list a').forEach(a => { a.addEventListener('click', () => { $$('#settings-nav-list a').forEach(x => x.classList.remove('active')); a.classList.add('active'); renderSettings_body(); }); }); }
-    function renderSettings_body() { const c = document.getElementById('settings-body-content'); if (c) c.innerHTML = settingsBodyHTML(); }
+    function bindSettingsNav() {
+      $$('#settings-nav-list a').forEach(a => {
+        a.addEventListener('click', () => {
+          $$('#settings-nav-list a').forEach(x => x.classList.remove('active'));
+          a.classList.add('active');
+          renderSettings_body();
+        });
+      });
+    }
+    function renderSettings_body() {
+      const c = document.getElementById('settings-body-content');
+      if (c) c.innerHTML = settingsBodyHTML();
+    }
     function settingsBodyHTML() {
       if (settingsSection === 'profile') return `
-    <h2>Profile Settings</h2><p class="s-desc">Update your public profile information.</p>
+    <h2>Profile Settings</h2>
+    <p class="s-desc">Update your public profile information.</p>
     <div class="s-section-title">PERSONAL INFO</div>
-    <div class="s-row"><div><div class="s-row-label">Photo</div><div class="s-row-desc">Shown on your profile and in comments.</div></div>
-      <div class="avatar-upload"><div class="avatar-lg" id="settings-avatar">${(currentUser || '').slice(0, 2).toUpperCase()}</div>
+    <div class="s-row">
+      <div><div class="s-row-label">Photo</div><div class="s-row-desc">Shown on your profile and in comments.</div></div>
+      <div class="avatar-upload">
+        <div class="avatar-lg" id="settings-avatar">${(currentUser || '').slice(0, 2).toUpperCase()}</div>
         <input type="file" id="avatar-file-input" accept="image/*" class="hidden" onchange="handleAvatarUpload(event)">
-        <button class="btn-ghost" style="font-size:13px;padding:8px 16px;" onclick="document.getElementById('avatar-file-input').click()">Change</button></div></div>
-    <div class="s-row"><div><div class="s-row-label">Display Name</div></div><input class="s-input" id="s-username" value="${currentUser || ''}" /></div>
-    <div class="s-row"><div><div class="s-row-label">Email</div><div class="s-row-desc">Used to sign in and receive notifications.</div></div><span style="color:var(--muted);font-size:14px;">${currentUserEmail || '—'}</span></div>
-    <div class="s-row"><div><div class="s-row-label">Role</div></div><span class="role-badge ${isAdmin ? 'admin' : 'user'}">${isAdmin ? 'Admin' : 'Member'}</span></div>
-    <div style="display:flex;justify-content:flex-end;margin-top:22px;gap:10px;"><button class="btn-ghost" onclick="document.getElementById('s-username').value=currentUser||''">Discard</button><button class="btn-solid" onclick="saveSettingsProfile()">Save Changes</button></div>`;
+        <button class="btn-ghost" style="font-size:13px;padding:8px 16px;" onclick="document.getElementById('avatar-file-input').click()">Change</button>
+      </div>
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Display Name</div></div>
+      <input class="s-input" id="s-username" value="${currentUser || ''}" />
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Email</div><div class="s-row-desc">Used to sign in and receive notifications.</div></div>
+      <span style="color:var(--muted);font-size:14px;">${currentUserEmail || '—'}</span>
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Role</div></div>
+      <span class="role-badge ${isAdmin ? 'admin' : 'user'}">${isAdmin ? 'Admin' : 'Member'}</span>
+    </div>
+    <div style="display:flex;justify-content:flex-end;margin-top:22px;gap:10px;">
+      <button class="btn-ghost" onclick="document.getElementById('s-username').value=currentUser||''">Discard</button>
+      <button class="btn-solid" onclick="saveSettingsProfile()">Save Changes</button>
+    </div>`;
       if (settingsSection === 'account') return `
-    <h2>Account & Security</h2><p class="s-desc">Manage your password and connected devices.</p>
+    <h2>Account & Security</h2>
+    <p class="s-desc">Manage your password and connected devices.</p>
     <div class="s-section-title">CHANGE PASSWORD</div>
-    <div class="s-row"><div><div class="s-row-label">Current Password</div></div><input type="password" class="s-input" id="pw-current" placeholder="••••••••" /></div>
-    <div class="s-row"><div><div class="s-row-label">New Password</div></div><input type="password" class="s-input" id="pw-new" placeholder="Min. 8 characters" /></div>
-    <div class="s-row"><div><div class="s-row-label">Confirm New Password</div></div><input type="password" class="s-input" id="pw-confirm" placeholder="Repeat new password" /></div>
-    <div style="display:flex;justify-content:flex-end;margin-top:16px;"><button class="btn-solid" onclick="updatePassword()">Update Password</button></div>
+    <div class="s-row">
+      <div><div class="s-row-label">Current Password</div></div>
+      <input type="password" class="s-input" id="pw-current" placeholder="••••••••" />
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">New Password</div></div>
+      <input type="password" class="s-input" id="pw-new" placeholder="Min. 8 characters" />
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Confirm New Password</div></div>
+      <input type="password" class="s-input" id="pw-confirm" placeholder="Repeat new password" />
+    </div>
+    <div style="display:flex;justify-content:flex-end;margin-top:16px;">
+      <button class="btn-solid" onclick="updatePassword()">Update Password</button>
+    </div>
     <div class="s-section-title" style="margin-top:28px;">SESSIONS</div>
-    <div class="s-row"><div><div class="s-row-label">Current Session</div><div class="s-row-desc">This browser, logged in now.</div></div><span class="tag">Active</span></div>
-    <div class="s-row"><div><div class="s-row-label">Sign out all devices</div><div class="s-row-desc">Revokes all active sessions except this one.</div></div><button class="btn-ghost" style="font-size:13px;padding:8px 16px;color:var(--red);" onclick="signOutAllDevices()">Sign out all</button></div>`;
+    <div class="s-row">
+      <div><div class="s-row-label">Current Session</div><div class="s-row-desc">This browser, logged in now.</div></div>
+      <span class="tag">Active</span>
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Sign out all devices</div><div class="s-row-desc">Revokes all active sessions except this one.</div></div>
+      <button class="btn-ghost" style="font-size:13px;padding:8px 16px;color:var(--red);" onclick="signOutAllDevices()">Sign out all</button>
+    </div>`;
       if (settingsSection === 'appearance') return `
-    <h2>Appearance</h2><p class="s-desc">Customize how Taskflow looks and feels.</p>
+    <h2>Appearance</h2>
+    <p class="s-desc">Customize how Taskflow looks and feels.</p>
     <div class="s-section-title">THEME</div>
-    <div class="s-row"><div><div class="s-row-label">Color Mode</div><div class="s-row-desc">Choose light or dark interface.</div></div>
+    <div class="s-row">
+      <div><div class="s-row-label">Color Mode</div><div class="s-row-desc">Choose light or dark interface.</div></div>
       <div style="display:flex;gap:8px;">
         <button class="filter-chip ${ (localStorage.getItem('theme')||'light')==='light'?'active':'' }" id="theme-light-btn" onclick="setTheme('light')" style="display:flex;align-items:center;gap:5px;"><i class="fa-solid fa-sun"></i> Light</button>
-        <button class="filter-chip ${ localStorage.getItem('theme')==='dark'?'active':'' }" id="theme-dark-btn" onclick="setTheme('dark')" style="display:flex;align-items:center;gap:5px;"><i class="fa-solid fa-moon"></i> Dark</button></div></div>
-    <div class="s-row"><div><div class="s-row-label">Accent Color</div><div class="s-row-desc">Changes buttons and highlights.</div></div>
-      <div class="color-picker">${['#2563eb', '#7c3aed', '#16a34a', '#dc2626', '#ea580c', '#0891b2'].map((c, i) => `<div class="color-dot ${i === 0 ? 'selected' : ''}" style="background:${c};" onclick="setAccentColor('${c}');$$('.color-dot').forEach(d=>d.classList.remove('selected'));this.classList.add('selected')"></div>`).join('')}</div></div>
+        <button class="filter-chip ${ localStorage.getItem('theme')==='dark'?'active':'' }" id="theme-dark-btn" onclick="setTheme('dark')" style="display:flex;align-items:center;gap:5px;"><i class="fa-solid fa-moon"></i> Dark</button>
+      </div>
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Accent Color</div><div class="s-row-desc">Changes buttons and highlights.</div></div>
+      <div class="color-picker">
+        ${['#2563eb', '#7c3aed', '#16a34a', '#dc2626', '#ea580c', '#0891b2'].map((c, i) => `<div class="color-dot ${i === 0 ? 'selected' : ''}" style="background:${c};" onclick="setAccentColor('${c}');$$('.color-dot').forEach(d=>d.classList.remove('selected'));this.classList.add('selected')"></div>`).join('')}
+      </div>
+    </div>
     <div class="s-section-title">LAYOUT</div>
-    <div class="s-row"><div><div class="s-row-label">Compact Mode</div><div class="s-row-desc">Reduce spacing for denser information.</div></div>
-      <label class="toggle"><input type="checkbox" ${loadPrefs().compactMode ? 'checked' : ''} onchange="setPref('compactMode', this.checked)"><span class="toggle-slider"></span></label></div>
-    <div class="s-row"><div><div class="s-row-label">Sidebar Width</div><div class="s-row-desc">Wider sidebar shows more text.</div></div>
+    <div class="s-row">
+      <div><div class="s-row-label">Compact Mode</div><div class="s-row-desc">Reduce spacing for denser information.</div></div>
+      <label class="toggle"><input type="checkbox" ${loadPrefs().compactMode ? 'checked' : ''} onchange="setPref('compactMode', this.checked)"><span class="toggle-slider"></span></label>
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Sidebar Width</div><div class="s-row-desc">Wider sidebar shows more text.</div></div>
       <select class="s-input" style="min-width:140px;" onchange="setPref('sidebarWidth', this.value)">
         <option value="narrow" ${loadPrefs().sidebarWidth !== 'wide' ? 'selected' : ''}>Narrow (220px)</option>
-        <option value="wide" ${loadPrefs().sidebarWidth === 'wide' ? 'selected' : ''}>Wide (260px)</option></select></div>`;
+        <option value="wide" ${loadPrefs().sidebarWidth === 'wide' ? 'selected' : ''}>Wide (260px)</option>
+      </select>
+    </div>`;
       if (settingsSection === 'notifications') return `
-    <h2>Notifications</h2><p class="s-desc">Control when and how you receive alerts.</p>
+    <h2>Notifications</h2>
+    <p class="s-desc">Control when and how you receive alerts.</p>
     <div class="s-section-title">EMAIL NOTIFICATIONS</div>
-    ${[['Task assigned to me', 'Receive an email when a task is assigned to you', 'notifyTaskAssigned'],['Task completed', 'When a task you created is marked done', 'notifyTaskCompleted'],['Weekly digest', 'A summary of your workspace activity every Monday', 'notifyWeeklyDigest'],['Product updates', 'News about Taskflow features and improvements', 'notifyProductUpdates']].map(([l, d, key]) => `
-    <div class="s-row"><div><div class="s-row-label">${l}</div><div class="s-row-desc">${d}</div></div>
-      <label class="toggle"><input type="checkbox" ${loadPrefs()[key] ? 'checked' : ''} onchange="setPref('${key}', this.checked)"><span class="toggle-slider"></span></label></div>`).join('')}
+    ${[
+          ['Task assigned to me', 'Receive an email when a task is assigned to you', 'notifyTaskAssigned'],
+          ['Task completed', 'When a task you created is marked done', 'notifyTaskCompleted'],
+          ['Weekly digest', 'A summary of your workspace activity every Monday', 'notifyWeeklyDigest'],
+          ['Product updates', 'News about Taskflow features and improvements', 'notifyProductUpdates'],
+        ].map(([l, d, key]) => `
+    <div class="s-row">
+      <div><div class="s-row-label">${l}</div><div class="s-row-desc">${d}</div></div>
+      <label class="toggle"><input type="checkbox" ${loadPrefs()[key] ? 'checked' : ''} onchange="setPref('${key}', this.checked)"><span class="toggle-slider"></span></label>
+    </div>`).join('')}
     <div class="s-section-title" style="margin-top:20px;">IN-APP NOTIFICATIONS</div>
-    <div class="s-row"><div><div class="s-row-label">Push notifications</div><div class="s-row-desc">Browser push alerts for critical updates.</div></div>
-      <label class="toggle"><input type="checkbox" ${loadPrefs().notifyPush ? 'checked' : ''} onchange="setPref('notifyPush', this.checked)"><span class="toggle-slider"></span></label></div>`;
+    <div class="s-row">
+      <div><div class="s-row-label">Push notifications</div><div class="s-row-desc">Browser push alerts for critical updates.</div></div>
+      <label class="toggle"><input type="checkbox" ${loadPrefs().notifyPush ? 'checked' : ''} onchange="setPref('notifyPush', this.checked)"><span class="toggle-slider"></span></label>
+    </div>`;
       if (settingsSection === 'workspace') return `
-    <h2>Workspace</h2><p class="s-desc">Configure your team workspace settings.</p>
+    <h2>Workspace</h2>
+    <p class="s-desc">Configure your team workspace settings.</p>
+    <div class="s-section-title">TEAM</div>
+    <div class="s-row">
+      <div><div class="s-row-label">${escHtml(currentWorkspaceName || 'Your workspace')}</div><div class="s-row-desc">Share the invite code below so teammates can join.</div></div>
+      <button class="btn-ghost" style="font-size:13px;padding:8px 16px;" onclick="loadAndShowInviteCode()">Get Invite Code</button>
+    </div>
+    <div id="ws-invite-display"></div>
     <div class="s-section-title">GENERAL</div>
-    <div class="s-row"><div><div class="s-row-label">Workspace Name</div></div><input class="s-input" id="ws-name" value="${escAttr(loadPrefs().workspaceName)}" /></div>
-    <div class="s-row"><div><div class="s-row-label">Default Assignee</div></div><select class="s-input" id="ws-default-assignee" style="min-width:160px;">${ASSIGNEES.map(a => `<option ${a === loadPrefs().defaultAssignee ? 'selected' : ''}>${a}</option>`).join('')}</select></div>
-    <div class="s-row"><div><div class="s-row-label">Allow member invitations</div><div class="s-row-desc">Members can invite others to the workspace.</div></div>
-      <label class="toggle"><input type="checkbox" id="ws-allow-invitations" ${loadPrefs().allowInvitations ? 'checked' : ''}><span class="toggle-slider"></span></label></div>
+    <div class="s-row">
+      <div><div class="s-row-label">Workspace Name</div></div>
+      <input class="s-input" id="ws-name" value="${escAttr(loadPrefs().workspaceName)}" />
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Default Assignee</div></div>
+      <select class="s-input" id="ws-default-assignee" style="min-width:160px;">${ASSIGNEES.map(a => `<option ${a === loadPrefs().defaultAssignee ? 'selected' : ''}>${a}</option>`).join('')}</select>
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Allow member invitations</div><div class="s-row-desc">Members can invite others to the workspace.</div></div>
+      <label class="toggle"><input type="checkbox" id="ws-allow-invitations" ${loadPrefs().allowInvitations ? 'checked' : ''}><span class="toggle-slider"></span></label>
+    </div>
     <div style="display:flex;justify-content:flex-end;margin-top:16px;"><button class="btn-solid" onclick="saveWorkspace()">Save Workspace</button></div>`;
       if (settingsSection === 'billing') return `
-    <h2>Billing & Plans</h2><p class="s-desc">Manage your subscription and payment details.</p>
+    <h2>Billing & Plans</h2>
+    <p class="s-desc">Manage your subscription and payment details.</p>
     <div class="billing-card" style="border-radius:14px;padding:24px;margin-bottom:22px;">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:14px;">
         <div><div style="font-size:12px;font-weight:700;letter-spacing:.8px;color:var(--accent);margin-bottom:6px;">CURRENT PLAN</div>
           <div style="font-size:24px;font-weight:700;color:var(--text);">Free</div>
-          <div style="font-size:13px;color:var(--muted);margin-top:4px;">Up to 100 tasks · 1 workspace · Community support</div></div>
-        <button class="btn-solid" style="background:linear-gradient(135deg,#7c3aed,#a855f7);" onclick="openUpgradeModal()">Upgrade to Pro →</button></div></div>
+          <div style="font-size:13px;color:var(--muted);margin-top:4px;">Up to 100 tasks · 1 workspace · Community support</div>
+        </div>
+        <button class="btn-solid" style="background:linear-gradient(135deg,#7c3aed,#a855f7);" onclick="openUpgradeModal()">Upgrade to Pro →</button>
+      </div>
+    </div>
     <div class="s-section-title">PRO FEATURES</div>
     ${['Unlimited tasks and projects', 'Priority support', 'Advanced analytics', 'Custom fields & filters', 'Team collaboration tools', 'API access'].map(f => `
-    <div class="s-row" style="padding:10px 0;"><div style="display:flex;align-items:center;gap:9px;"><i class="fa-solid fa-check" style="color:var(--green);font-size:12px;"></i><span style="font-size:14px;">${f}</span></div></div>`).join('')}`;
+    <div class="s-row" style="padding:10px 0;">
+      <div style="display:flex;align-items:center;gap:9px;"><i class="fa-solid fa-check" style="color:var(--green);font-size:12px;"></i><span style="font-size:14px;">${f}</span></div>
+    </div>`).join('')}`;
       return `<h2>${settingsSection}</h2><p class="s-desc">Coming soon.</p>`;
     }
     function handleAvatarUpload(e) {
-      const file = e.target.files[0]; if (!file) return;
+      const file = e.target.files[0];
+      if (!file) return;
       const reader = new FileReader();
       reader.onload = (ev) => {
         const url = ev.target.result;
-        const settingsAv = document.getElementById('settings-avatar'); if (settingsAv) settingsAv.innerHTML = `<img src="${url}" alt="avatar">`;
-        const headerAv = document.getElementById('avatar'); if (headerAv) headerAv.innerHTML = `<img src="${url}" alt="avatar">`;
+        const settingsAv = document.getElementById('settings-avatar');
+        if (settingsAv) settingsAv.innerHTML = `<img src="${url}" alt="avatar">`;
+        const headerAv = document.getElementById('avatar');
+        if (headerAv) headerAv.innerHTML = `<img src="${url}" alt="avatar">`;
         showAdminToast('Photo updated! (preview only — not saved to server)', false);
       };
       reader.readAsDataURL(file);
     }
     async function updatePassword() {
-      const cur = document.getElementById('pw-current')?.value || '', next = document.getElementById('pw-new')?.value || '', confirm = document.getElementById('pw-confirm')?.value || '';
+      const cur = document.getElementById('pw-current')?.value || '';
+      const next = document.getElementById('pw-new')?.value || '';
+      const confirm = document.getElementById('pw-confirm')?.value || '';
       if (!cur || !next || !confirm) { showAdminToast('Please fill in all password fields.', true); return; }
       if (next.length < 8) { showAdminToast('New password must be at least 8 characters.', true); return; }
       if (next !== confirm) { showAdminToast('New passwords do not match.', true); return; }
       try {
         const res = await fetch(`${API}/users/change-password`, { method: 'PUT', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token()}` }, body: JSON.stringify({ current_password: cur, new_password: next }) });
         const data = await res.json();
-        if (res.ok) { showAdminToast('Password updated!', false); pushNotif('Your password was changed.', 'fa-lock'); ['pw-current', 'pw-new', 'pw-confirm'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; }); }
-        else { showAdminToast(data.message || 'Could not update password.', true); }
+        if (res.ok) {
+          showAdminToast('Password updated!', false);
+          ['pw-current', 'pw-new', 'pw-confirm'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+        } else { showAdminToast(data.message || 'Could not update password.', true); }
       } catch (e) { showAdminToast('Cannot connect to server.', true); }
     }
-    function signOutAllDevices() { showAdminToast('All other sessions signed out.', false); }
+    function signOutAllDevices() {
+      showAdminToast('All other sessions signed out.', false);
+    }
+    async function loadAndShowInviteCode() {
+      const el = document.getElementById('ws-invite-display');
+      if (!el) return;
+      el.innerHTML = '<p style="font-size:13px;color:var(--muted);margin:10px 0;">Loading…</p>';
+      try {
+        const res = await fetch(`${API}/users/workspace`, { headers: { "Authorization": `Bearer ${token()}` } });
+        const data = await res.json();
+        if (res.ok) {
+          el.innerHTML = `<div style="background:var(--soft);border:1px solid #bfdbfe;border-radius:10px;padding:12px 14px;margin:10px 0;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-weight:700;color:var(--accent);letter-spacing:.5px;">${escHtml(data.invite_code)}</span>
+            <span style="font-size:12px;color:var(--muted);">${data.member_count} member${data.member_count === 1 ? '' : 's'}</span>
+          </div>`;
+        } else { showAdminToast(data.message || 'Could not load workspace.', true); el.innerHTML = ''; }
+      } catch (e) { showAdminToast('Cannot connect to server.', true); el.innerHTML = ''; }
+    }
     function saveWorkspace() {
       const name = document.getElementById('ws-name')?.value.trim() || DEFAULT_PREFS.workspaceName;
       const assignee = document.getElementById('ws-default-assignee')?.value || DEFAULT_PREFS.defaultAssignee;
@@ -2539,16 +2800,33 @@
     }
     function openUpgradeModal() {
       const root = $("#modal-root");
-      const plans = [{ name: 'Monthly', price: '$9', period: '/month', tag: '', features: ['Unlimited tasks & projects', 'Priority support', 'Advanced analytics'] },{ name: 'Yearly', price: '$79', period: '/year', tag: 'Save 27%', features: ['Everything in Monthly', 'Custom fields & filters', 'API access'] }];
+      const plans = [
+        { name: 'Monthly', price: '$9', period: '/month', tag: '', features: ['Unlimited tasks & projects', 'Priority support', 'Advanced analytics'] },
+        { name: 'Yearly', price: '$79', period: '/year', tag: 'Save 27%', features: ['Everything in Monthly', 'Custom fields & filters', 'API access'] },
+      ];
       root.innerHTML = `
   <div class="overlay" id="ov">
     <div class="modal" style="max-width:560px;">
-      <h2 style="display:flex;align-items:center;gap:10px;"><span style="background:linear-gradient(135deg,#7c3aed,#a855f7);width:30px;height:30px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;"><i class="fa-solid fa-bolt" style="color:#fff;font-size:14px;"></i></span>Upgrade to Pro</h2>
+      <h2 style="display:flex;align-items:center;gap:10px;">
+        <span style="background:linear-gradient(135deg,#7c3aed,#a855f7);width:30px;height:30px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;"><i class="fa-solid fa-bolt" style="color:#fff;font-size:14px;"></i></span>
+        Upgrade to Pro
+      </h2>
       <p style="font-size:13.5px;color:var(--muted);margin-bottom:20px;">This is a preview — billing isn't connected yet, so nothing will actually be charged.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-        ${plans.map(p => `<div style="border:1px solid var(--line2);border-radius:14px;padding:18px;position:relative;${p.tag ? 'border-color:var(--accent);box-shadow:0 0 0 2px rgba(124,58,237,.15);' : ''}">${p.tag ? `<span style="position:absolute;top:-10px;right:14px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">${p.tag}</span>` : ''}<div style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;">${p.name}</div><div style="margin-top:6px;"><span style="font-size:28px;font-weight:700;">${p.price}</span><span style="font-size:13px;color:var(--muted);">${p.period}</span></div><ul style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">${p.features.map(f => `<li style="font-size:13px;display:flex;align-items:center;gap:7px;"><i class="fa-solid fa-check" style="color:var(--green);font-size:11px;"></i>${f}</li>`).join('')}</ul></div>`).join('')}
+        ${plans.map(p => `
+        <div style="border:1px solid var(--line2);border-radius:14px;padding:18px;position:relative;${p.tag ? 'border-color:var(--accent);box-shadow:0 0 0 2px rgba(124,58,237,.15);' : ''}">
+          ${p.tag ? `<span style="position:absolute;top:-10px;right:14px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;">${p.tag}</span>` : ''}
+          <div style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;">${p.name}</div>
+          <div style="margin-top:6px;"><span style="font-size:28px;font-weight:700;">${p.price}</span><span style="font-size:13px;color:var(--muted);">${p.period}</span></div>
+          <ul style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">
+            ${p.features.map(f => `<li style="font-size:13px;display:flex;align-items:center;gap:7px;"><i class="fa-solid fa-check" style="color:var(--green);font-size:11px;"></i>${f}</li>`).join('')}
+          </ul>
+        </div>`).join('')}
       </div>
-      <div class="m-actions"><button class="btn-ghost" id="m-cancel">Maybe later</button><button class="btn-solid" id="m-continue" style="background:linear-gradient(135deg,#7c3aed,#a855f7);">Continue</button></div>
+      <div class="m-actions">
+        <button class="btn-ghost" id="m-cancel">Maybe later</button>
+        <button class="btn-solid" id="m-continue" style="background:linear-gradient(135deg,#7c3aed,#a855f7);">Continue</button>
+      </div>
     </div>
   </div>`;
       const close = () => (root.innerHTML = "");
@@ -2557,13 +2835,13 @@
       $("#ov").addEventListener("click", e => { if (e.target.id === "ov") close(); });
     }
     function saveSettingsProfile() {
-      const newName = document.getElementById('s-username')?.value.trim(); if (!newName) return;
+      const newName = document.getElementById('s-username')?.value.trim();
+      if (!newName) return;
       currentUser = newName;
       document.getElementById('userName').textContent = currentUser;
       document.getElementById('avatar').textContent = currentUser.slice(0, 2).toUpperCase();
       document.getElementById('settings-avatar').textContent = currentUser.slice(0, 2).toUpperCase();
       showAdminToast('Profile saved!', false);
-      pushNotif('Your profile was updated.', 'fa-user-pen');
     }
     function setAccentColor(c) { document.documentElement.style.setProperty('--accent', c); document.documentElement.style.setProperty('--soft', c + '22'); }
     function setTheme(mode) {
@@ -2571,43 +2849,74 @@
       localStorage.setItem('theme', mode);
       const lb = document.getElementById('theme-light-btn'), db = document.getElementById('theme-dark-btn');
       if (lb && db) { lb.classList.toggle('active', mode === 'light'); db.classList.toggle('active', mode === 'dark'); }
-      const ti = document.getElementById('themeToggleIcon');
-      if (ti) { ti.className = mode === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; }
-    }
-    function initThemeToggle() {
-      const btn = document.getElementById('themeToggleBtn');
-      if (!btn) return;
-      btn.addEventListener('click', () => {
-        const cur = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-        setTheme(cur === 'dark' ? 'light' : 'dark');
-      });
-      const ti = document.getElementById('themeToggleIcon');
-      if (ti) { ti.className = localStorage.getItem('theme') === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; }
     }
 
+    // ══════════════════════ LOCAL PREFERENCES (cosmetic settings, no backend yet) ══════════════════════
     const PREFS_KEY = 'taskflow_prefs';
-    const DEFAULT_PREFS = { compactMode: false, sidebarWidth: 'narrow', notifyTaskAssigned: true, notifyTaskCompleted: true, notifyWeeklyDigest: true, notifyProductUpdates: true, notifyPush: false, workspaceName: 'My Workspace', defaultAssignee: 'No one', allowInvitations: true, sysRegistrationOpen: true, sysMaintenanceMode: false, sysMaxTasksPerUser: 500, sysAppName: 'Taskflow' };
-    function loadPrefs() { try { const raw = localStorage.getItem(PREFS_KEY); return raw ? { ...DEFAULT_PREFS, ...JSON.parse(raw) } : { ...DEFAULT_PREFS }; } catch (e) { return { ...DEFAULT_PREFS }; } }
-    function savePrefs(patch) { const next = { ...loadPrefs(), ...patch }; localStorage.setItem(PREFS_KEY, JSON.stringify(next)); return next; }
-    function applyPrefs() { const p = loadPrefs(); document.body.classList.toggle('compact', !!p.compactMode); document.documentElement.style.setProperty('--sidebar-width', p.sidebarWidth === 'wide' ? '260px' : '220px'); }
-    function setPref(key, value) { savePrefs({ [key]: value }); applyPrefs(); }
+    const DEFAULT_PREFS = {
+      compactMode: false,
+      sidebarWidth: 'narrow',
+      notifyTaskAssigned: true,
+      notifyTaskCompleted: true,
+      notifyWeeklyDigest: true,
+      notifyProductUpdates: true,
+      notifyPush: false,
+      workspaceName: 'My Workspace',
+      defaultAssignee: 'No one',
+      allowInvitations: true,
+      sysRegistrationOpen: true,
+      sysMaintenanceMode: false,
+      sysMaxTasksPerUser: 500,
+      sysAppName: 'Taskflow',
+    };
+    function loadPrefs() {
+      try {
+        const raw = localStorage.getItem(PREFS_KEY);
+        return raw ? { ...DEFAULT_PREFS, ...JSON.parse(raw) } : { ...DEFAULT_PREFS };
+      } catch (e) { return { ...DEFAULT_PREFS }; }
+    }
+    function savePrefs(patch) {
+      const next = { ...loadPrefs(), ...patch };
+      localStorage.setItem(PREFS_KEY, JSON.stringify(next));
+      return next;
+    }
+    function applyPrefs() {
+      const p = loadPrefs();
+      document.body.classList.toggle('compact', !!p.compactMode);
+      document.documentElement.style.setProperty('--sidebar-width', p.sidebarWidth === 'wide' ? '260px' : '220px');
+    }
+    function setPref(key, value) {
+      savePrefs({ [key]: value });
+      applyPrefs();
+    }
     function showAdminToast(msg, err) {
       const t = document.createElement('div');
       t.style.cssText = `position:fixed;bottom:22px;right:22px;background:${err ? '#dc2626' : '#1a2b44'};color:#fff;padding:12px 20px;border-radius:12px;font-size:13.5px;font-weight:500;z-index:9999;animation:f .3s ease;`;
-      t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 2800);
+      t.textContent = msg; document.body.appendChild(t);
+      setTimeout(() => t.remove(), 2800);
     }
 
+    // ══════════════════════ ADMIN PANEL ══════════════════════
     async function loadAdminUsers() {
       try {
-        const [usersRes, statsRes] = await Promise.all([fetch(`${API}/users/admin/users`, { headers: { "Authorization": `Bearer ${token()}` } }),fetch(`${API}/users/admin/stats`, { headers: { "Authorization": `Bearer ${token()}` } })]);
+        const [usersRes, statsRes] = await Promise.all([
+          fetch(`${API}/users/admin/users`, { headers: { "Authorization": `Bearer ${token()}` } }),
+          fetch(`${API}/users/admin/stats`, { headers: { "Authorization": `Bearer ${token()}` } })
+        ]);
         adminUsers = usersRes.ok ? await usersRes.json() : [];
         adminStats = statsRes.ok ? await statsRes.json() : adminStats;
       } catch (e) { adminUsers = []; }
     }
     async function loadAdminActivity() {
-      try { const res = await fetch(`${API}/users/admin/activity`, { headers: { "Authorization": `Bearer ${token()}` } }); adminActivity = res.ok ? await res.json() : []; } catch (e) { adminActivity = []; }
+      try {
+        const res = await fetch(`${API}/users/admin/activity`, { headers: { "Authorization": `Bearer ${token()}` } });
+        adminActivity = res.ok ? await res.json() : [];
+      } catch (e) { adminActivity = []; }
       const feed = document.getElementById('admin-feed');
-      if (feed) { feed.innerHTML = adminActivity.length === 0 ? '<li><span class="dot"></span><span class="txt">No activity yet.</span></li>' : adminActivity.map(a => `<li><span class="dot"></span><span class="txt"><strong>${escHtml(a.user_name)}</strong> — ${escHtml(a.action)}</span><span class="when">${timeAgo(a.created_at)}</span></li>`).join(''); }
+      if (feed) {
+        feed.innerHTML = adminActivity.length === 0 ? '<li><span class="dot"></span><span class="txt">No activity yet.</span></li>' :
+          adminActivity.map(a => `<li><span class="dot"></span><span class="txt"><strong>${escHtml(a.user_name)}</strong> — ${escHtml(a.action)}</span><span class="when">${timeAgo(a.created_at)}</span></li>`).join('');
+      }
     }
     function renderAdmin() {
       return `
@@ -2627,48 +2936,87 @@
   </div>`;
     }
     function bindAdminTabs() { }
-    function renderAdminBody() { const b = document.getElementById('admin-body'); if (b) b.innerHTML = adminBodyHTML(); if (adminTab === 'activity') loadAdminActivity(); }
+    function renderAdminBody() {
+      const b = document.getElementById('admin-body');
+      if (b) b.innerHTML = adminBodyHTML();
+      if (adminTab === 'activity') loadAdminActivity();
+    }
     function fmtDate(d) { if (!d) return '—'; return new Date(d).toISOString().slice(0, 10); }
     function adminBodyHTML() {
       if (adminTab === 'users') return `
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
-      <div class="search-bar" style="margin:0;max-width:300px;flex:1;"><i class="fa-solid fa-magnifying-glass" style="color:var(--dim);font-size:13px;"></i>
-        <input placeholder="Search users…" id="admin-search" oninput="renderAdminBody()" style="border:none;background:transparent;font-size:14px;flex:1;"></div></div>
+      <div class="search-bar" style="margin:0;max-width:300px;flex:1;">
+        <i class="fa-solid fa-magnifying-glass" style="color:var(--dim);font-size:13px;"></i>
+        <input placeholder="Search users…" id="admin-search" oninput="renderAdminBody()" style="border:none;background:transparent;font-size:14px;flex:1;">
+      </div>
+    </div>
     <div style="overflow-x:auto;">
     <table class="admin-table">
-      <thead><tr><th>User</th><th>Role</th><th>Tasks</th><th>Joined</th><th>Actions</th></tr></thead>
+      <thead><tr>
+        <th>User</th><th>Role</th><th>Tasks</th><th>Joined</th><th>Actions</th>
+      </tr></thead>
       <tbody>
-        ${adminUsers.filter(u => { const q = document.getElementById('admin-search')?.value.toLowerCase() || ''; return !q || u.user_name.toLowerCase().includes(q) || u.email.toLowerCase().includes(q); }).map(u => `
-        <tr><td><div style="display:flex;align-items:center;gap:10px;">
+        ${adminUsers.filter(u => {
+        const q = document.getElementById('admin-search')?.value.toLowerCase() || '';
+        return !q || u.user_name.toLowerCase().includes(q) || u.email.toLowerCase().includes(q);
+      }).map(u => `
+        <tr>
+          <td><div style="display:flex;align-items:center;gap:10px;">
             <div class="avatar" style="width:34px;height:34px;font-size:12px;${u.role === 'admin' ? 'background:var(--purple)' : ''}">${u.user_name.slice(0, 2).toUpperCase()}</div>
-            <div><div style="font-weight:600;font-size:13.5px;">${escHtml(u.user_name)}</div><div style="font-size:12px;color:var(--muted);">${escHtml(u.email)}</div></div></div></td>
+            <div><div style="font-weight:600;font-size:13.5px;">${escHtml(u.user_name)}</div><div style="font-size:12px;color:var(--muted);">${escHtml(u.email)}</div></div>
+          </div></td>
           <td><span class="role-badge ${u.role}">${u.role}</span></td>
           <td style="font-size:13.5px;">${u.task_count ?? 0}</td>
           <td style="font-size:12px;color:var(--dim);">${fmtDate(u.created_at)}</td>
-          <td><div style="display:flex;gap:6px;">
+          <td>
+            <div style="display:flex;gap:6px;">
               <button onclick="toggleAdminRole(${u.id})" style="border:none;background:none;color:var(--muted);font-size:13px;padding:4px 8px;border-radius:6px;cursor:pointer;" title="Toggle admin role"><i class="fa-solid fa-shield-halved"></i></button>
-              <button onclick="removeAdminUser(${u.id})" style="border:none;background:none;color:var(--dim);font-size:13px;padding:4px 8px;border-radius:6px;cursor:pointer;" title="Remove user"><i class="fa-solid fa-trash"></i></button></div></td>
+              <button onclick="removeAdminUser(${u.id})" style="border:none;background:none;color:var(--dim);font-size:13px;padding:4px 8px;border-radius:6px;cursor:pointer;" title="Remove user"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </td>
         </tr>`).join('')}
       </tbody>
     </table></div>`;
-      if (adminTab === 'activity') return `<ul class="feed" style="max-height:340px;overflow-y:auto;" id="admin-feed"><li><span class="dot" style="background:var(--green)"></span><span class="txt">Loading activity…</span></li></ul>`;
+
+      if (adminTab === 'activity') return `
+    <ul class="feed" style="max-height:340px;overflow-y:auto;" id="admin-feed">
+      <li><span class="dot" style="background:var(--green)"></span><span class="txt">Loading activity…</span></li>
+    </ul>`;
+
       if (adminTab === 'system') return `
-    <div style="background:var(--soft);border:1px solid #bfdbfe;border-radius:10px;padding:12px 14px;margin-bottom:18px;font-size:12.5px;color:var(--accent);"><i class="fa-solid fa-circle-info"></i> These settings save locally to this browser only — there's no backend endpoint yet to persist platform-wide config for all admins.</div>
-    <div class="s-row"><div><div class="s-row-label">Registration Open</div><div class="s-row-desc">Allow new users to sign up.</div></div><label class="toggle"><input type="checkbox" id="sys-registration-open" ${loadPrefs().sysRegistrationOpen ? 'checked' : ''}><span class="toggle-slider"></span></label></div>
-    <div class="s-row"><div><div class="s-row-label">Maintenance Mode</div><div class="s-row-desc">Show a maintenance banner to users.</div></div><label class="toggle"><input type="checkbox" id="sys-maintenance-mode" ${loadPrefs().sysMaintenanceMode ? 'checked' : ''}><span class="toggle-slider"></span></label></div>
-    <div class="s-row"><div><div class="s-row-label">Max Tasks per User</div></div><input class="s-input" id="sys-max-tasks" style="min-width:100px;" type="number" value="${loadPrefs().sysMaxTasksPerUser}" /></div>
-    <div class="s-row"><div><div class="s-row-label">App Name</div></div><input class="s-input" id="sys-app-name" value="${escAttr(loadPrefs().sysAppName)}" /></div>
+    <div style="background:var(--soft);border:1px solid #bfdbfe;border-radius:10px;padding:12px 14px;margin-bottom:18px;font-size:12.5px;color:var(--accent);">
+      <i class="fa-solid fa-circle-info"></i> These settings save locally to this browser only — there's no backend endpoint yet to persist platform-wide config for all admins.
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Registration Open</div><div class="s-row-desc">Allow new users to sign up.</div></div>
+      <label class="toggle"><input type="checkbox" id="sys-registration-open" ${loadPrefs().sysRegistrationOpen ? 'checked' : ''}><span class="toggle-slider"></span></label>
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Maintenance Mode</div><div class="s-row-desc">Show a maintenance banner to users.</div></div>
+      <label class="toggle"><input type="checkbox" id="sys-maintenance-mode" ${loadPrefs().sysMaintenanceMode ? 'checked' : ''}><span class="toggle-slider"></span></label>
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">Max Tasks per User</div></div>
+      <input class="s-input" id="sys-max-tasks" style="min-width:100px;" type="number" value="${loadPrefs().sysMaxTasksPerUser}" />
+    </div>
+    <div class="s-row">
+      <div><div class="s-row-label">App Name</div></div>
+      <input class="s-input" id="sys-app-name" value="${escAttr(loadPrefs().sysAppName)}" />
+    </div>
     <div style="display:flex;justify-content:flex-end;margin-top:16px;"><button class="btn-solid" onclick="saveSystemConfig()">Save Config</button></div>`;
       return '';
     }
     async function toggleAdminRole(id) {
-      const u = adminUsers.find(x => x.id === id); if (!u) return;
+      const u = adminUsers.find(x => x.id === id);
+      if (!u) return;
       const newRole = u.role === 'admin' ? 'user' : 'admin';
       try {
         const res = await fetch(`${API}/users/admin/users/${id}/role`, { method: 'PUT', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token()}` }, body: JSON.stringify({ role: newRole }) });
         const data = await res.json();
-        if (res.ok) { await loadAdminUsers(); renderAdminBody(); showAdminToast(`${u.user_name} is now ${newRole}.`, false); }
-        else { showAdminToast(data.message || 'Could not update role.', true); }
+        if (res.ok) {
+          await loadAdminUsers(); renderAdminBody();
+          showAdminToast(`${u.user_name} is now ${newRole}.`, false);
+        } else { showAdminToast(data.message || 'Could not update role.', true); }
       } catch (e) { showAdminToast('Cannot connect to server.', true); }
     }
     async function removeAdminUser(id) {
@@ -2680,18 +3028,31 @@
       } catch (e) { showAdminToast('Cannot connect to server.', true); }
     }
 
-    async function loadTasks() { try { const res = await fetch(`${API}/tasks`, { headers: { "Authorization": `Bearer ${token()}` } }); return await res.json(); } catch (e) { return null; } }
+    // ══════════════════════ DATA HELPERS ══════════════════════
+    async function loadTasks() {
+      try {
+        const res = await fetch(`${API}/tasks`, { headers: { "Authorization": `Bearer ${token()}` } });
+        return await res.json();
+      } catch (e) { return null; }
+    }
     function formatTasks(tasks) {
       const b = { todo: [], doing: [], done: [] };
-      tasks.forEach(t => { const n = { id: t.id, text: t.title, desc: "", priority: t.priority || "Medium", assignee: t.assignee || "No one", due: t.due_date || "" }; if (t.status === "todo") b.todo.push(n); else if (t.status === "in_progress") b.doing.push(n); else if (t.status === "done") b.done.push(n); });
+      tasks.forEach(t => {
+        const n = { id: t.id, text: t.title, desc: "", priority: t.priority || "Medium", assignee: t.assignee || "No one", due: t.due_date || "" };
+        if (t.status === "todo") b.todo.push(n);
+        else if (t.status === "in_progress") b.doing.push(n);
+        else if (t.status === "done") b.done.push(n);
+      });
       return b;
     }
     async function loadActivity() {
       try {
         const res = await fetch(`${API}/tasks/activity`, { headers: { "Authorization": `Bearer ${token()}` } });
         const data = await res.json();
-        const feed = document.querySelector('.feed'); if (!feed) return;
-        feed.innerHTML = data.length === 0 ? '<li><span class="dot"></span><span class="txt">No activity yet.</span></li>' : data.map(item => `<li><span class="dot"></span><span class="txt">${escHtml(item.action)}</span><span class="when">${timeAgo(item.created_at)}</span></li>`).join('');
+        const feed = document.querySelector('.feed');
+        if (!feed) return;
+        feed.innerHTML = data.length === 0 ? '<li><span class="dot"></span><span class="txt">No activity yet.</span></li>' :
+          data.map(item => `<li><span class="dot"></span><span class="txt">${item.user_name ? `<strong>${escHtml(item.user_name)}</strong> — ` : ''}${escHtml(item.action)}</span><span class="when">${timeAgo(item.created_at)}</span></li>`).join('');
       } catch (e) { }
     }
     function timeAgo(d) {
@@ -2700,8 +3061,11 @@
       if (m < 1) return 'Just now'; if (m < 60) return `${m}m ago`; if (h < 24) return `${h}h ago`; if (dy === 1) return 'Yesterday'; return `${dy}d ago`;
     }
 
+    // ══════════════════════ HAMBURGER ══════════════════════
     function initHamburger() {
-      const hb = document.getElementById('hamburger'), ov = document.getElementById('sidebar-overlay'), sb = document.getElementById('sidebar');
+      const hb = document.getElementById('hamburger');
+      const ov = document.getElementById('sidebar-overlay');
+      const sb = document.getElementById('sidebar');
       if (!hb || !sb) return;
       hb.onclick = () => { sb.classList.toggle('open'); ov.style.display = sb.classList.contains('open') ? 'block' : 'none'; };
       ov.onclick = () => { sb.classList.remove('open'); ov.style.display = 'none'; };
@@ -2710,8 +3074,6 @@
     // ══════════════════════ BOOT ══════════════════════
     setTheme(localStorage.getItem('theme') || 'light');
     applyPrefs();
-    initNotifs();
-    initThemeToggle();
     show("home");
   </script>
 </body>

@@ -6,7 +6,8 @@
       "email": "admin@taskflow.io",
       "password": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
       "role": "admin",
-      "created_at": "2025-01-15T10:00:00.000Z"
+      "created_at": "2025-01-15T10:00:00.000Z",
+      "workspace_id": 1
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "email": "alice@example.com",
       "password": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
       "role": "user",
-      "created_at": "2025-03-20T08:30:00.000Z"
+      "created_at": "2025-03-20T08:30:00.000Z",
+      "workspace_id": 1
     },
     {
       "id": 3,
@@ -22,30 +24,17 @@
       "email": "bob@example.com",
       "password": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
       "role": "user",
-      "created_at": "2025-04-10T14:20:00.000Z"
+      "created_at": "2025-04-10T14:20:00.000Z",
+      "workspace_id": 1
     },
     {
       "id": 4,
-      "user_name": "adam",
-      "email": "adamtq10@gmail.com",
-      "password": "$2a$10$bgBGg/WdX9DPcOFoKWemS.OaNFRL.1z9z7osC.ha72HHMnZ/AXm8q",
-      "role": "user",
-      "created_at": "2026-06-25T20:05:03.669Z"
-    },
-    {
-      "id": 5,
       "user_name": "laila",
       "email": "lailaelberhichi@gmail.com",
-      "password": "$2a$10$3ek8xVJoze0m7dUEqx957uPCGTykcPYhvtI7rXeDw/0Iuert6ZjUK",
+      "password": "$2a$10$LOR.9Lseqg4WKuyRiOntqOgU7RYrqZeAgmhDVSS9.0kXV/WKtNAaO",
       "role": "user",
-      "created_at": "2026-06-26T01:35:58.408Z"
-    },
-    {
-      "user_name": "hafssa",
-      "email": "assakagou@gmail.com",
-      "password": "$2a$10$AWORb6bwk1GQi4gNM2VVA.yGfUD8v9fjnyay.kg5pC8wsqGNCuU6a",
-      "role": "user",
-      "created_at": "2026-06-26T15:58:58.159Z"
+      "created_at": "2026-06-25T20:47:30.063Z",
+      "workspace_id": 1
     }
   ],
   "tasks": [
@@ -57,7 +46,8 @@
       "priority": "High",
       "assignee": "admin",
       "due_date": "2025-01-20",
-      "created_at": "2025-01-15T10:00:00.000Z"
+      "created_at": "2025-01-15T10:00:00.000Z",
+      "workspace_id": 1
     },
     {
       "id": 2,
@@ -65,9 +55,10 @@
       "title": "Design the Kanban board",
       "status": "done",
       "priority": "High",
-      "assignee": "Alice",
+      "assignee": "Adam",
       "due_date": "2025-01-25",
-      "created_at": "2025-01-16T09:00:00.000Z"
+      "created_at": "2025-01-16T09:00:00.000Z",
+      "workspace_id": 1
     },
     {
       "id": 3,
@@ -77,7 +68,8 @@
       "priority": "High",
       "assignee": "admin",
       "due_date": "2026-07-01",
-      "created_at": "2025-01-17T11:00:00.000Z"
+      "created_at": "2025-01-17T11:00:00.000Z",
+      "workspace_id": 1
     },
     {
       "id": 4,
@@ -85,9 +77,10 @@
       "title": "Add admin panel",
       "status": "in_progress",
       "priority": "Medium",
-      "assignee": "Alice",
+      "assignee": "Safa",
       "due_date": "2026-07-10",
-      "created_at": "2025-01-18T12:00:00.000Z"
+      "created_at": "2025-01-18T12:00:00.000Z",
+      "workspace_id": 1
     },
     {
       "id": 5,
@@ -95,9 +88,10 @@
       "title": "Write documentation",
       "status": "todo",
       "priority": "Low",
-      "assignee": "Bob",
+      "assignee": "Adam",
       "due_date": "2026-07-20",
-      "created_at": "2025-01-19T15:00:00.000Z"
+      "created_at": "2025-01-19T15:00:00.000Z",
+      "workspace_id": 1
     },
     {
       "id": 6,
@@ -107,115 +101,53 @@
       "priority": "Medium",
       "assignee": "No one",
       "due_date": "2026-07-15",
-      "created_at": "2025-01-20T10:00:00.000Z"
+      "created_at": "2025-01-20T10:00:00.000Z",
+      "workspace_id": 1
+    },
+    {
+      "id": 7,
+      "user_id": 4,
+      "title": "figma",
+      "status": "todo",
+      "priority": "High",
+      "assignee": "Adam",
+      "due_date": "2026-06-29",
+      "created_at": "2026-06-25T20:50:07.402Z",
+      "workspace_id": 1
     },
     {
       "id": 8,
       "user_id": 4,
-      "title": "helo",
+      "title": "planning figma",
       "status": "in_progress",
-      "priority": "Medium",
-      "assignee": "No one",
-      "due_date": null,
-      "created_at": "2026-06-25T20:07:11.581Z"
+      "priority": "Low",
+      "assignee": "Hafssa",
+      "due_date": "2026-06-30",
+      "created_at": "2026-06-25T20:50:22.978Z",
+      "workspace_id": 1
     },
     {
       "id": 9,
       "user_id": 4,
-      "title": "hello",
-      "status": "in_progress",
-      "priority": "Medium",
-      "assignee": "No one",
-      "due_date": null,
-      "created_at": "2026-06-25T20:07:16.435Z"
-    },
-    {
-      "id": 10,
-      "user_id": 4,
-      "title": "hello",
-      "status": "in_progress",
-      "priority": "High",
-      "assignee": "No one",
-      "due_date": null,
-      "created_at": "2026-06-25T20:07:20.095Z"
-    },
-    {
-      "id": 11,
-      "user_id": 4,
-      "title": "hello",
+      "title": "design",
       "status": "done",
       "priority": "Medium",
-      "assignee": "No one",
-      "due_date": null,
-      "created_at": "2026-06-25T20:07:27.887Z"
-    },
+      "assignee": "Laila",
+      "due_date": "2026-06-28",
+      "created_at": "2026-06-25T20:52:37.134Z",
+      "workspace_id": 1
+    }
+  ],
+  "projects": [
     {
-      "id": 12,
+      "id": 1,
       "user_id": 4,
-      "title": "f",
-      "status": "todo",
-      "priority": "Medium",
-      "assignee": "No one",
-      "due_date": null,
-      "created_at": "2026-06-25T20:07:34.432Z"
-    },
-    {
-      "id": 13,
-      "user_id": 4,
-      "title": "f",
-      "status": "in_progress",
-      "priority": "Medium",
-      "assignee": "No one",
-      "due_date": null,
-      "created_at": "2026-06-25T20:07:36.473Z"
-    },
-    {
-      "id": 14,
-      "user_id": 4,
-      "title": "f",
-      "status": "done",
-      "priority": "Medium",
-      "assignee": "No one",
-      "due_date": null,
-      "created_at": "2026-06-25T20:07:38.499Z"
-    },
-    {
-      "id": 15,
-      "user_id": 4,
-      "title": "f",
-      "status": "in_progress",
-      "priority": "Medium",
-      "assignee": "No one",
-      "due_date": null,
-      "created_at": "2026-06-25T20:07:41.490Z"
-    },
-    {
-      "id": 16,
-      "user_id": 4,
-      "title": "presentaion",
-      "status": "done",
-      "priority": "Medium",
-      "assignee": "No one",
-      "due_date": null,
-      "created_at": "2026-06-25T21:48:34.246Z"
-    },
-    {
-      "id": 17,
-      "user_id": 4,
-      "title": "codearena",
-      "status": "todo",
-      "priority": "High",
-      "assignee": "Adam",
-      "due_date": "2026-07-10",
-      "created_at": "2026-06-25T21:49:03.147Z"
-    },
-    {
-      "title": "html",
-      "status": "todo",
-      "priority": "Medium",
-      "assignee": "No one",
-      "due_date": null,
-      "created_at": "2026-06-26T20:42:50.644Z"
+      "workspace_id": 1,
+      "name": "taskflow",
+      "description": "",
+      "color": "#2563eb",
+      "status": "active",
+      "created_at": "2026-06-28T17:50:43.203Z"
     }
   ],
   "activity_log": [
@@ -252,129 +184,90 @@
     {
       "id": 6,
       "user_id": 4,
-      "action": "Created task \"hello\"",
-      "created_at": "2026-06-25T20:06:55.595Z"
+      "action": "Created task \"planning figma\"",
+      "created_at": "2026-06-25T20:50:07.404Z"
     },
     {
       "id": 7,
       "user_id": 4,
-      "action": "Deleted task \"hello\"",
-      "created_at": "2026-06-25T20:06:59.371Z"
+      "action": "Created task \"planning figma\"",
+      "created_at": "2026-06-25T20:50:22.983Z"
     },
     {
       "id": 8,
       "user_id": 4,
-      "action": "Created task \"helo\"",
-      "created_at": "2026-06-25T20:07:11.583Z"
+      "action": "Started task \"planning figma\"",
+      "created_at": "2026-06-25T20:50:46.741Z"
     },
     {
       "id": 9,
       "user_id": 4,
-      "action": "Created task \"hello\"",
-      "created_at": "2026-06-25T20:07:16.437Z"
+      "action": "Completed task \"planning figma\"",
+      "created_at": "2026-06-25T20:51:08.308Z"
     },
     {
       "id": 10,
       "user_id": 4,
-      "action": "Created task \"hello\"",
-      "created_at": "2026-06-25T20:07:20.097Z"
+      "action": "Started task \"planning figma\"",
+      "created_at": "2026-06-25T20:51:16.983Z"
     },
     {
       "id": 11,
       "user_id": 4,
-      "action": "Started task \"helo\"",
-      "created_at": "2026-06-25T20:07:23.762Z"
+      "action": "Started task \"figma\"",
+      "created_at": "2026-06-25T20:51:45.627Z"
     },
     {
       "id": 12,
       "user_id": 4,
-      "action": "Created task \"hello\"",
-      "created_at": "2026-06-25T20:07:27.889Z"
+      "action": "Moved task \"figma\" to To Do",
+      "created_at": "2026-06-25T20:51:56.129Z"
     },
     {
       "id": 13,
       "user_id": 4,
-      "action": "Created task \"f\"",
-      "created_at": "2026-06-25T20:07:34.434Z"
+      "action": "Created task \"design\"",
+      "created_at": "2026-06-25T20:52:37.139Z"
     },
     {
       "id": 14,
       "user_id": 4,
-      "action": "Created task \"f\"",
-      "created_at": "2026-06-25T20:07:36.475Z"
+      "action": "Created project \"taskflow\"",
+      "created_at": "2026-06-28T17:50:43.209Z"
     },
     {
       "id": 15,
       "user_id": 4,
-      "action": "Created task \"f\"",
-      "created_at": "2026-06-25T20:07:38.501Z"
+      "action": "Updated task \"Write documentation\"",
+      "created_at": "2026-06-28T17:51:24.638Z"
     },
     {
       "id": 16,
       "user_id": 4,
-      "action": "Created task \"f\"",
-      "created_at": "2026-06-25T20:07:41.492Z"
+      "action": "Started task \"Add admin panel\"",
+      "created_at": "2026-06-28T17:51:35.661Z"
     },
     {
       "id": 17,
       "user_id": 4,
-      "action": "Started task \"hello\"",
-      "created_at": "2026-06-25T20:08:12.290Z"
-    },
-    {
-      "id": 18,
-      "user_id": 4,
-      "action": "Moved task \"helo\" to To Do",
-      "created_at": "2026-06-25T20:10:57.023Z"
-    },
-    {
-      "id": 19,
-      "user_id": 4,
-      "action": "Created task \"presentaion\"",
-      "created_at": "2026-06-25T21:48:34.252Z"
-    },
-    {
-      "id": 20,
-      "user_id": 4,
-      "action": "Created task \"codearena\"",
-      "created_at": "2026-06-25T21:49:03.151Z"
-    },
-    {
-      "id": 21,
-      "user_id": 4,
-      "action": "Updated task \"codearena\"",
-      "created_at": "2026-06-25T21:49:12.718Z"
-    },
-    {
-      "id": 22,
-      "user_id": 4,
-      "action": "Started task \"helo\"",
-      "created_at": "2026-06-25T22:12:48.569Z"
-    },
-    {
-      "id": 23,
-      "user_id": 4,
-      "action": "Completed task \"presentaion\"",
-      "created_at": "2026-06-25T22:12:51.157Z"
-    },
-    {
-      "action": "Created task \"html\"",
-      "created_at": "2026-06-26T20:42:50.649Z"
-    },
-    {
-      "id": null,
-      "action": "Updated task \"html\"",
-      "created_at": "2026-06-26T20:43:13.276Z"
-    },
-    {
-      "id": 1,
-      "action": "Updated task \"fontend\"",
-      "created_at": "2026-06-26T20:44:54.471Z"
+      "action": "Completed task \"Design the Kanban board\"",
+      "created_at": "2026-06-28T17:51:46.800Z"
     }
   ],
   "_nextId": {
     "users": 5,
-    "tasks": 18,
-    "activity_log": 24
-  }
+    "tasks": 10,
+    "projects": 2,
+    "activity_log": 18,
+    "workspaces": 2
+  },
+  "workspaces": [
+    {
+      "id": 1,
+      "name": "Taskflow Team",
+      "invite_code": "TASKFLOW-7F3K9",
+      "created_by": 1,
+      "created_at": "2025-01-15T10:00:00.000Z"
+    }
+  ]
 }
