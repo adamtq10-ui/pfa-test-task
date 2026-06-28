@@ -1,6 +1,8 @@
 const bcrypt = require("bcryptjs");
 const jwt    = require("jsonwebtoken");
+const crypto = require("crypto");
 const db     = require("../db");
+const { sendWelcomeEmail, sendPasswordResetEmail } = require("../mailer");
 
 // ── REGISTER ──────────────────────────────────────────────
 exports.register = async (req, res) => {
@@ -36,6 +38,7 @@ exports.register = async (req, res) => {
 
     if (workspace_mode === "join") {
       const userId = db.users.create({ user_name, email, password: hashedPassword, workspace_id });
+      sendWelcomeEmail(email, user_name, resultWorkspace?.name); // fire-and-forget, doesn't block response
       return res.status(201).json({
         message: "Account created successfully.",
         workspace: resultWorkspace,
@@ -46,6 +49,7 @@ exports.register = async (req, res) => {
       const userId = db.users.create({ user_name, email, password: hashedPassword, workspace_id: null });
       const { id: newWorkspaceId, invite_code: newInviteCode } = db.workspaces.create({ name: workspace_name, created_by: userId });
       db.users.updateWorkspace(userId, newWorkspaceId);
+      sendWelcomeEmail(email, user_name, workspace_name); // fire-and-forget, doesn't block response
 
       return res.status(201).json({
         message: "Account and workspace created successfully.",
@@ -167,6 +171,60 @@ exports.getWorkspaceInfo = (req, res) => {
     });
   } catch (err) {
     console.error("Get workspace error:", err);
+    res.status(500).json({ message: "Server error." });
+  }
+};
+
+// ── FORGOT PASSWORD ───────────────────────────────────────
+exports.forgotPassword = async (req, res) => {
+  const { email } = req.body;
+  if (!email) return res.status(400).json({ message: "Email is required." });
+
+  try {
+    const rows = db.users.findByEmail(email);
+    // Always respond the same way whether or not the email exists, to avoid leaking
+    // which addresses are registered.
+    const genericResponse = { message: "If that email is registered, a reset link has been sent." };
+
+    if (rows.length === 0) return res.status(200).json(genericResponse);
+
+    const user = rows[0];
+    const token = crypto.randomBytes(32).toString("hex");
+    const expires_at = new Date(Date.now() + 60 * 60 * 1000).toISOString(); // 1 hour
+
+    db.passwordResets.create(user.id, token, expires_at);
+
+    const resetUrl = `${process.env.FRONTEND_URL || "http://localhost:5500"}/index.html?reset_token=${token}`;
+    sendPasswordResetEmail(user.email, user.user_name, resetUrl); // fire-and-forget
+
+    res.status(200).json(genericResponse);
+  } catch (err) {
+    console.error("Forgot password error:", err);
+    res.status(500).json({ message: "Server error." });
+  }
+};
+
+// ── RESET PASSWORD ────────────────────────────────────────
+exports.resetPassword = async (req, res) => {
+  const { token, new_password } = req.body;
+
+  if (!token || !new_password)
+    return res.status(400).json({ message: "Token and new password are required." });
+
+  if (new_password.length < 8)
+    return res.status(400).json({ message: "Password must be at least 8 characters." });
+
+  try {
+    const entry = db.passwordResets.findByToken(token);
+    if (!entry) return res.status(400).json({ message: "This reset link is invalid or has expired." });
+
+    const hashed = await bcrypt.hash(new_password, 10);
+    db.users.updatePassword(entry.user_id, hashed);
+    db.passwordResets.consume(token);
+
+    res.status(200).json({ message: "Password reset successfully. You can now sign in." });
+  } catch (err) {
+    console.error("Reset password error:", err);
     res.status(500).json({ message: "Server error." });
   }
 };

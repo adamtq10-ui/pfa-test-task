@@ -31,10 +31,19 @@
       "id": 4,
       "user_name": "laila",
       "email": "lailaelberhichi@gmail.com",
-      "password": "$2a$10$LOR.9Lseqg4WKuyRiOntqOgU7RYrqZeAgmhDVSS9.0kXV/WKtNAaO",
+      "password": "$2a$10$Mfm/JmOogUaJ5gkvijv45eIhfIVB9tNCU0lXt/gFycT3rR.e5lBG.",
       "role": "user",
       "created_at": "2026-06-25T20:47:30.063Z",
       "workspace_id": 1
+    },
+    {
+      "id": 5,
+      "user_name": "LAILA",
+      "email": "laila.elberhichi.06@gmail.com",
+      "password": "$2a$10$x07vOYeisw69E1a6tZ.0Z.h.zZfLidS7KH9oLgc9RpWgzUJBjbCzq",
+      "role": "user",
+      "workspace_id": 2,
+      "created_at": "2026-06-28T19:51:40.405Z"
     }
   ],
   "tasks": [
@@ -55,7 +64,7 @@
       "title": "Design the Kanban board",
       "status": "done",
       "priority": "High",
-      "assignee": "Adam",
+      "assignee": "Alice",
       "due_date": "2025-01-25",
       "created_at": "2025-01-16T09:00:00.000Z",
       "workspace_id": 1
@@ -88,7 +97,7 @@
       "title": "Write documentation",
       "status": "todo",
       "priority": "Low",
-      "assignee": "Adam",
+      "assignee": "Safa",
       "due_date": "2026-07-20",
       "created_at": "2025-01-19T15:00:00.000Z",
       "workspace_id": 1
@@ -138,18 +147,7 @@
       "workspace_id": 1
     }
   ],
-  "projects": [
-    {
-      "id": 1,
-      "user_id": 4,
-      "workspace_id": 1,
-      "name": "taskflow",
-      "description": "",
-      "color": "#2563eb",
-      "status": "active",
-      "created_at": "2026-06-28T17:50:43.203Z"
-    }
-  ],
+  "projects": [],
   "activity_log": [
     {
       "id": 1,
@@ -228,38 +226,14 @@
       "user_id": 4,
       "action": "Created task \"design\"",
       "created_at": "2026-06-25T20:52:37.139Z"
-    },
-    {
-      "id": 14,
-      "user_id": 4,
-      "action": "Created project \"taskflow\"",
-      "created_at": "2026-06-28T17:50:43.209Z"
-    },
-    {
-      "id": 15,
-      "user_id": 4,
-      "action": "Updated task \"Write documentation\"",
-      "created_at": "2026-06-28T17:51:24.638Z"
-    },
-    {
-      "id": 16,
-      "user_id": 4,
-      "action": "Started task \"Add admin panel\"",
-      "created_at": "2026-06-28T17:51:35.661Z"
-    },
-    {
-      "id": 17,
-      "user_id": 4,
-      "action": "Completed task \"Design the Kanban board\"",
-      "created_at": "2026-06-28T17:51:46.800Z"
     }
   ],
   "_nextId": {
-    "users": 5,
+    "users": 6,
     "tasks": 10,
-    "projects": 2,
-    "activity_log": 18,
-    "workspaces": 2
+    "projects": 1,
+    "activity_log": 14,
+    "workspaces": 3
   },
   "workspaces": [
     {
@@ -268,6 +242,27 @@
       "invite_code": "TASKFLOW-7F3K9",
       "created_by": 1,
       "created_at": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "task",
+      "invite_code": "CWEU-4942",
+      "created_by": 5,
+      "created_at": "2026-06-28T19:51:40.410Z"
+    }
+  ],
+  "password_resets": [
+    {
+      "user_id": 5,
+      "token": "2144d4dbf166feb0c4077edf0a58aee4a2700f1d5117d0f28982d65eabbcc8a2",
+      "expires_at": "2026-06-28T20:53:09.462Z",
+      "created_at": "2026-06-28T19:53:09.463Z"
+    },
+    {
+      "user_id": 4,
+      "token": "4812cb15465691aeeae9722539f60f2cfa4206d5a484c328866e4d3e5b4b6118",
+      "expires_at": "2026-06-28T21:06:23.339Z",
+      "created_at": "2026-06-28T20:06:23.340Z"
     }
   ]
 }

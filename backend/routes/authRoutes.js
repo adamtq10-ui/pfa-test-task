@@ -1,13 +1,15 @@
 const express = require("express");
 const router  = express.Router();
 
-const { register, login, getMe, updateProfile, changePassword, getWorkspaceInfo } = require("../controllers/authController");
+const { register, login, getMe, updateProfile, changePassword, getWorkspaceInfo, forgotPassword, resetPassword } = require("../controllers/authController");
 const { requireAdmin, getAllUsers, updateUserRole, deleteUser, getStats, getActivityLog } = require("../controllers/adminController");
 const auth = require("../middleware/authMiddleware");
 
 // Public
-router.post("/register", register);
-router.post("/login",    login);
+router.post("/register",        register);
+router.post("/login",           login);
+router.post("/forgot-password", forgotPassword);
+router.post("/reset-password",  resetPassword);
 
 // Authenticated
 router.get("/me",              auth, getMe);

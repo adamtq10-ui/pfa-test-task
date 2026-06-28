@@ -1,4 +1,5 @@
 // db.js — JSON file database (drop-in replacement for mysql2/promise)
+// Switch to MySQL later by replacing this file with the mysql2 version.
 
 const fs   = require("fs");
 const path = require("path");
@@ -260,6 +261,30 @@ const db = {
   },
 
   // ── ACTIVITY LOG ─────────────────────────────────────────
+  // ── PASSWORD RESETS ───────────────────────────────────────
+  passwordResets: {
+    create(user_id, token, expires_at) {
+      const d = read();
+      if (!d.password_resets) d.password_resets = [];
+      // Invalidate any previous tokens for this user
+      d.password_resets = d.password_resets.filter(r => r.user_id !== user_id);
+      d.password_resets.push({ user_id, token, expires_at, created_at: new Date().toISOString() });
+      write(d);
+    },
+    findByToken(token) {
+      const d = read();
+      const entry = (d.password_resets || []).find(r => r.token === token);
+      if (!entry) return null;
+      if (new Date(entry.expires_at).getTime() < Date.now()) return null; // expired
+      return entry;
+    },
+    consume(token) {
+      const d = read();
+      d.password_resets = (d.password_resets || []).filter(r => r.token !== token);
+      write(d);
+    },
+  },
+
   activity: {
     log(user_id, action) {
       const d = read();
